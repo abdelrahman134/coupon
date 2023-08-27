@@ -55,10 +55,14 @@ export default function SignUp() {
     const handleChange=(e)=>{
         setUser(prev=>({...prev,[e.target.name]:e.target.value}))
     }
+    const axiosInstance = axios.create({
+      baseURL: "https://api.easycodesa.com/",
+    });
+
    const handleLogin = async (e) => {
      e.preventDefault();
      try {
-       const res = await axios.post("http://localhost:5000/addCoupon", 
+       const res = await axiosInstance.post("addCoupon", 
        user, { withCredentials: true }
        );
        navigate("/");

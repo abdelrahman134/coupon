@@ -13,7 +13,10 @@ export default function AddBanner() {
     console.log(e.target.files[0]);
     setImg(e.target.files[0]);
   };
-  
+  const axiosInstance = axios.create({
+    baseURL: "https://api.easycodesa.com/",
+  });
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [coupon, setCoupon] = React.useState({
@@ -33,7 +36,7 @@ export default function AddBanner() {
       formData.append("img", img);
       formData.append("name", coupon.name);
       formData.append("link", coupon.link);
-      const res = await axios.post("http://localhost:5000/addBanner", formData, {
+      const res = await axiosInstance.post("addBanner", formData, {
         withCredentials: true,
       });
      

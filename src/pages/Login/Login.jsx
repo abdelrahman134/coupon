@@ -46,6 +46,10 @@ export default function SignIn() {
             email: "",
             password:""
           });
+          const axiosInstance = axios.create({
+            baseURL: "https://api.easycodesa.com/",
+          });
+
           const handleChange = (e) => {
             setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
             console.log(user);
@@ -54,8 +58,8 @@ export default function SignIn() {
             e.preventDefault();
             dispatch(loginStart());
             try {
-              const res = await axios.post(
-                "http://localhost:5000/login",
+              const res = await axiosInstance.post(
+                "login",
                 user,
                 { withCredentials: true }
               );

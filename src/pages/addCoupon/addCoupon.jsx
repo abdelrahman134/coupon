@@ -13,6 +13,9 @@ export default function AddCoupon() {
         setImg(e.target.files[0])
     }
 const [country, setCountry] = useState();
+const axiosInstance = axios.create({
+  baseURL: "https://api.easycodesa.com/",
+});
 
 const dispatch=useDispatch()
 const handleCont = (value) => {
@@ -47,7 +50,7 @@ const handleLogin = async (e) => {
           
           
           
-    const res = await axios.post("http://localhost:5000/add", formData, {
+    const res = await axiosInstance.post("add", formData, {
       withCredentials: true,
     });
     navigate("/");

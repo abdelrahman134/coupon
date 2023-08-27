@@ -17,7 +17,9 @@ export default function Home() {
   const [filterData,setFilterData]=useState()
   const {currentUser}=useSelector(state=>state)
 const [banner,setBanner]=useState([])
-
+const axiosInstance = axios.create({
+  baseURL: "https://api.easycodesa.com/",
+});
 
   const handleClick=(value)=>{
  setCountryFilter(value) 
@@ -33,7 +35,7 @@ const [banner,setBanner]=useState([])
       // };
   const deleteFun = async (id) => {
     try {
-      axios.delete(`http://localhost:5000/delete/${id}`, {
+      axiosInstance.delete(`delete/${id}`, {
         withCredentials: true,
       });
     } catch (e) {
@@ -42,7 +44,7 @@ const [banner,setBanner]=useState([])
   };
   const deleteBanner = async (id) => {
     try {
-      axios.delete(`http://localhost:5000/deleteBanner/${id}`, {
+      axiosInstance.delete(`deleteBanner/${id}`, {
         withCredentials: true,
       });
     } catch (e) {
@@ -52,7 +54,7 @@ const [banner,setBanner]=useState([])
       useEffect(()=>{
         const getCoupon=async()=>{
           try{
-            const res=await axios.get("http://localhost:5000/get",{ withCredentials: true})
+            const res=await axiosInstance.get("get",{ withCredentials: true})
             setData1(res.data)
           
             
@@ -63,7 +65,7 @@ const [banner,setBanner]=useState([])
         }
         const getBanner = async () => {
           try {
-            const res = await axios.get("http://localhost:5000/getBanner", {
+            const res = await axiosInstance.get("getBanner", {
               withCredentials: true,
             });
             console.log(res.data);
