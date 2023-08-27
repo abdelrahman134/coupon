@@ -50,7 +50,7 @@ const handleClick=()=>{
         )}
         <img
           className="cardimg"
-          src={`/user/build/uploads//${item.img}`}
+          src={`/uploads//${item.img}`}
           alt=""
         />
         <Typography gutterBottom variant="h1" sx={{ fontSize: "20px" }}>

@@ -84,7 +84,7 @@ import "./Banner.css"
               <Box
                 className="banner"
                 sx={{
-                  background: `url(./build/uploads/${item.img}) center/cover fixed no-repeat`,
+                  background: `url(/uploads/${item.img}) center/cover fixed no-repeat`,
                   width: "100vw",
                   height: "52vh",
                   position: "relative",
