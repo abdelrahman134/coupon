@@ -22,7 +22,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://easycodesa.com",
-      "https://www.easycodesa.com/",
+      "https://www.easycodesa.com",
     ],
 
     credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
