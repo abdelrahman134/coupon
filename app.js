@@ -19,7 +19,11 @@ app.use(express.json())
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://www.easycodesa.com"],
+    origin: [
+      "http://localhost:3000",
+      "https://easycodesa.com",
+      "https://www.easycodesa.com/",
+    ],
 
     credentials: true, // some legacy browsers (IE11, various SmartTVs) choke on 204
     exposedHeader: ["set-cookie"],
