@@ -52,7 +52,6 @@ export default function SignIn() {
 
           const handleChange = (e) => {
             setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-            console.log(user);
           };
           const handleLogin = async (e) => {
             e.preventDefault();
