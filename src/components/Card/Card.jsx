@@ -48,7 +48,7 @@ const handleClick=()=>{
         ) : (
           ""
         )}
-        <img className="cardimg" src={`../../../build/uploads/${item.img}`} alt="" />
+        <img className="cardimg" src={`./build/uploads/${item.img}`} alt="" />
         <Typography gutterBottom variant="h1" sx={{ fontSize: "20px" }}>
           {item.companyName}
         </Typography>
