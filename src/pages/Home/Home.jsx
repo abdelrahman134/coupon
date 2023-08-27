@@ -87,7 +87,7 @@ const role =currentUser?.role?currentUser.role:"emp"
           })
         );
         
-      },[countryFliter,deleteBanner,deleteFun])
+      },[countryFliter])
 
       ;
   return (
