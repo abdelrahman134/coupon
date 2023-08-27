@@ -26,7 +26,6 @@ export default function AddBanner() {
   });
   const handleChange = (e) => {
     setCoupon((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    console.log(coupon);
   };
   const handleLogin = async (e) => {
     e.preventDefault();

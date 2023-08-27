@@ -9,7 +9,6 @@ import { loginFailure } from '../../redux/user';
 export default function AddCoupon() {
     const[img,setImg]=useState()
     const onInputChange=(e)=>{
-        console.log(e.target.files[0]);
         setImg(e.target.files[0])
     }
 const [country, setCountry] = useState();
@@ -31,7 +30,6 @@ const [coupon, setCoupon] = React.useState({
 });
 const handleChange = (e) => {
   setCoupon((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  console.log(coupon);
 };
 const handleLogin = async (e) => {
       e.preventDefault();

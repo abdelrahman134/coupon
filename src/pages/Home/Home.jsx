@@ -20,6 +20,7 @@ const [banner,setBanner]=useState([])
 const axiosInstance = axios.create({
   baseURL: "https://api.easycodesa.com/",
 });
+const role =currentUser?.role?currentUser.role:"emp"
 
   const handleClick=(value)=>{
  setCountryFilter(value) 
@@ -68,7 +69,6 @@ const axiosInstance = axios.create({
             const res = await axiosInstance.get("getBanner", {
               withCredentials: true,
             });
-            console.log(res.data);
             setBanner(res.data);
           } catch (e) {
             console.log(e);
@@ -88,7 +88,7 @@ const axiosInstance = axios.create({
         );
         
       },[countryFliter,deleteBanner,deleteFun])
-  
+
       ;
   return (
     <Stack
@@ -137,7 +137,7 @@ const axiosInstance = axios.create({
       <Banner
         data={banner}
         deleteBanner={deleteBanner}
-        role={currentUser.role}
+        role={role}
       />
       <Box
         sx={{
@@ -153,7 +153,7 @@ const axiosInstance = axios.create({
           كوبونات خصم 2023
         </Typography>
       </Box>
-      {currentUser.role == "Admin" ? (
+      {role == "Admin" ? (
         <Box sx={{ display: "flex", gap: "10px", justifyContent: "flex-end" }}>
           <Link to="/addCoupon">
             <Button
@@ -193,7 +193,7 @@ const axiosInstance = axios.create({
             item={item}
             key={item.id}
             id={item._id}
-            role={currentUser.role}
+            role={role}
             deleteFun={deleteFun}
           />
         ))}

@@ -30,7 +30,7 @@ const handleClick=()=>{
           position: "relative",
         }}
       >
-        {role == "Admin" ? (
+        {(role || "emp") == "Admin" ? (
           <div id={id} onClick={handleClick}>
             <Box
               sx={{

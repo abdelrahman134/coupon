@@ -104,11 +104,10 @@ import "./Banner.css"
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    flexDirection:"column"
-                    
+                    flexDirection: "column",
                   }}
                 >
-                  {role == "Admin" ? (
+                  {(role || "emp") == "Admin" ? (
                     <div id={item._id} onClick={handleClick}>
                       <Box
                         sx={{
@@ -129,20 +128,22 @@ import "./Banner.css"
                   <Typography sx={{ fontSize: "70px", color: "white" }}>
                     {item.name}
                   </Typography>
-                  {item.link&&<a href={item.link}>
-                    {" "}
-                    <Button
-                      variant="contained"
-                      sx={{
-                        backgroundColor: "rgb(102,45,145,1)",
-                        color: "white",
-                        width: "100%",
-                        marginTop: "10px",
-                      }}
-                    >
-                      زيارة الموقع
-                    </Button>
-                  </a>}
+                  {item.link && (
+                    <a href={item.link}>
+                      {" "}
+                      <Button
+                        variant="contained"
+                        sx={{
+                          backgroundColor: "rgb(102,45,145,1)",
+                          color: "white",
+                          width: "100%",
+                          marginTop: "10px",
+                        }}
+                      >
+                        زيارة الموقع
+                      </Button>
+                    </a>
+                  )}
                 </Box>
               </Box>
             </SwiperSlide>
