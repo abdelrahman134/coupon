@@ -11,7 +11,6 @@ export default function AddBanner() {
   const [img, setImg] = useState();
   const onInputChange = (e) => {
     console.log(e.target.files[0]);
-    setImg(e.target.files[0]);
   };
   const axiosInstance = axios.create({
     baseURL: "https://api.easycodesa.com/",
