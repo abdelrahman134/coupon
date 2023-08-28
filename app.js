@@ -40,11 +40,11 @@ app.use(function (req, res, next) {
   next();
 });
 app.use(cookieParser());
-
 app.use(auth)
 app.use(coupon);
 app.use(addCoupon);
 app.use(addBanner);
+app.use(express.static("public"));
 
 app.use((err, req, res, next) => {
   const status = err.status || 500;

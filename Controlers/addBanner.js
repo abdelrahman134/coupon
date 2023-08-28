@@ -2,7 +2,8 @@ const Banner = require("../Models/addBanner.js");
 const createError = require("../error.js");
 const addBanner = async (req, res, next) => {
   try {
-    if (!req.file.filename) return createError(next(400, "their is a problem"));
+    console.log(req.file);
+    if (!req.file.path) return createError(next(400, "their is a problem"));
     const newComment = new Banner({
       ...req.body,
       img: req.file.filename,
