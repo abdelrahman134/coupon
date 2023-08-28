@@ -12,6 +12,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Helmet } from "react-helmet";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import like from "../../assets/12.png"
+import dislike from "../../assets/32.png";
+import "./Popover.css"
 export default function Popover({item}) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
@@ -75,10 +78,10 @@ export default function Popover({item}) {
       >
         <Box
           sx={{
-            width: { xs: "340px", md: "400px" },
-            height: "440px",
+            width: { xs: "350px", md: "400px" },
+            height: "450px",
             borderRadius: "10px",
-            padding: "20px 0 ",
+            padding: { xs: "10px 0 ", md: "15px 0 " },
           }}
         >
           <DialogTitle
@@ -123,13 +126,17 @@ export default function Popover({item}) {
               alignItems: "flex-end",
             }}
           >
-            <Typography variant="h1" sx={{ fontSize: "30px" }}>
+            <Typography variant="h1" sx={{ fontSize: "20px" }}>
               {item.discount} خصم{" "}
             </Typography>
 
-            <Typography sx={{ fontSize: "30px" }}>
+            <Typography sx={{ fontSize: "25px" }}>
               {" "}
-              متوفر في {item.country}
+              <span className="con">
+              الدوله :
+
+              </span>
+               {" "+item.country}
             </Typography>
 
             <Box sx={{ display: "flex", gap: "20px" }}>
@@ -155,18 +162,19 @@ export default function Popover({item}) {
                 color: "rgb(25 118 210)",
                 justifyContent: "center",
                 width: "100%",
+                alignItems: "center",
               }}
             >
-              <ThumbUpIcon />
+              <img src={dislike} className="iconpop" alt="" />
 
-              <ThumbDownIcon />
+              <img src={like} className="iconpop" alt="" />
             </Box>
           </DialogContent>
           <DialogActions>
             <Button
               autoFocus
               variant="contained"
-              sx={{ width: "80%", margin: "0 auto" }}
+              sx={{ width: "80%", margin: "0 auto",backgroundColor:"rgb(102,45,145,1)" }}
               onClick={handleCopy}
             >
               نسخ الكوبون
