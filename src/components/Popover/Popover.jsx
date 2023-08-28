@@ -54,7 +54,7 @@ export default function Popover({item}) {
       >
         احصل علي الخصم
       </Button>
-      <a href={"https://" + item.siteLink} rel="nonopener" target="_blank">
+      <a href={item.siteLink} rel="nonopener" target="_blank">
         {" "}
         <Button
           variant="contained"
@@ -75,8 +75,8 @@ export default function Popover({item}) {
       >
         <Box
           sx={{
-            width: "400px",
-            height: "420px",
+            width: { xs: "340px", md: "400px" },
+            height: "440px",
             borderRadius: "10px",
             padding: "20px 0 ",
           }}
@@ -104,13 +104,15 @@ export default function Popover({item}) {
             >
               <CloseIcon />
             </Box>
-            <img src={`/uploads/${item.img}`} alt="" />
-            <Typography variant="h1" sx={{ fontSize: "30px" }}>
+            <img
+              src={`https://api.easycodesa.com/uploads/${item.img}`}
+              alt=""
+            />
+            <Typography
+              variant="h1"
+              sx={{ fontSize: "40px", fontWeight: "bold" }}
+            >
               {item.companyName}{" "}
-            </Typography>
-
-            <Typography variant="h1" sx={{ fontSize: "30px" }}>
-              {item.discount} خصم{" "}
             </Typography>
           </DialogTitle>
           <DialogContent
@@ -121,7 +123,14 @@ export default function Popover({item}) {
               alignItems: "flex-end",
             }}
           >
-            <Typography variant="h4"> متوفر في {item.country}</Typography>
+            <Typography variant="h1" sx={{ fontSize: "30px" }}>
+              {item.discount} خصم{" "}
+            </Typography>
+
+            <Typography sx={{ fontSize: "30px" }}>
+              {" "}
+              متوفر في {item.country}
+            </Typography>
 
             <Box sx={{ display: "flex", gap: "20px" }}>
               <Typography

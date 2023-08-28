@@ -43,64 +43,42 @@ export default function Footer() {
         }}
       >
         <img src={logo} className="img1" alt="" />
-        <Typography sx={{ marginTop: { xs: "0px", md: "60px" } }}>
+        <Typography
+          sx={{
+            marginTop: { xs: "0px", md: "60px" },
+            display: { xs: "none", md: "block" },
+          }}
+        >
           ©Copyright. Easy Code rights are reserved
         </Typography>
       </Box>
-      <Box sx={{ display: "grid", gap: "10px" }}>
+      <Box
+        sx={{
+          display: "grid",
+          gap: "10px",
+          alignItems: "center",
+          textAlign: "center",
+          marginBottom:{xs:"0px",md:"30px"}
+        }}
+      >
         <Typography
           variant="h2"
           sx={{ fontSize: "30px", marginBottom: "10px" }}
         >
           تابعنا علي
         </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            justifyContent: "flex-end",
-            fontSize: "20px",
-          }}
-        >
-          <Typography sx={{ fontWeight: "400", fontSize: "20px" }}>
-            WhatsApp
-          </Typography>
+        <Box sx={{ display: "flex", justifyContent: "center", gap: "10px" }}>
           <a
             className="icons"
             href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
           >
             <img className="social" src={wh} alt="" />
           </a>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Typography sx={{ fontWeight: "400", fontSize: "20px" }}>
-            Telegram
-          </Typography>
 
           <a className="icons" href="https://t.me/EasyCodesa_bot">
             {" "}
             <img className="social" src={tel} alt="" />
           </a>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Typography sx={{ fontWeight: "400", fontSize: "20px" }}>
-            Instgram
-          </Typography>
 
           <a className="icons" href="https://www.instagram.com/Easycode.sa">
             {" "}
@@ -124,6 +102,14 @@ export default function Footer() {
           </Typography>
         ))}
       </Box>
+      <Typography
+        sx={{
+          marginTop: { xs: "0px", md: "60px" },
+          display: { xs: "block", md: "none" },
+        }}
+      >
+        ©Copyright. Easy Code rights are reserved
+      </Typography>
     </Stack>
   );
 }

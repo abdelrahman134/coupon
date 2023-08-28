@@ -82,9 +82,6 @@ const navItems = [
       fontSize: "20px",
     }}
   >
-    <Typography sx={{ fontWeight: "400", fontSize: "20px" }}>
-    Bot{" "}
-    </Typography>
     <a
       className="icons"
       href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
@@ -109,10 +106,54 @@ const navItems = [
       <img className="navs" src={tel} alt="" />
     </a>
   </Box>,
+  <Link to="/login" >
+    
+      تسجيل الدخول
+  </Link>,
   "جميع المتاجر",
   "عروض اليوم",
 ];
+const navItemsmall = [
+  "جميع المتاجر",
+  "عروض اليوم",
+  
+  <Link to="/login">تسجيل الدخول</Link>,
+  <Box sx={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: "10px",
+        justifyContent: "flex-end",
+        fontSize: "20px",
+      }}
+    >
+      <a
+        className="icons"
+        href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
+      >
+        <img className="navs" src={wh} alt="" />
+      </a>
+    </Box>
 
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        gap: "10px",
+        justifyContent: "flex-end",
+      }}
+    >
+      {/* <Typography sx={{ fontWeight: "400", fontSize: "20px" }}>
+  تلقرلم بوت        </Typography> */}
+
+      <a className="icons" href="https://t.me/EasyCodesa_bot">
+        {" "}
+        <img className="navs" src={tel} alt="" />
+      </a>
+    </Box>
+  </Box>,
+];
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -126,7 +167,7 @@ function DrawerAppBar(props) {
       <img src={logo} alt="" />
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {navItemsmall.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "right" }}>
               <ListItemText primary={item} />
