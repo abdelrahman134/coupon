@@ -50,7 +50,7 @@ const handleClick=()=>{
         )}
         <img
           className="cardimg"
-          src={item.img && `${require("../../../build/uploads/" + item.img)}`}
+          src={item.img && `${require("../../../../user/build/uploads/" + item.img)}`}
           alt=""
         />
         <Typography gutterBottom variant="h1" sx={{ fontSize: "20px" }}>

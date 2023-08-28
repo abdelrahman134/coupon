@@ -84,8 +84,8 @@ import "./Banner.css"
             <SwiperSlide id={item.id}>
               <Box
                 className="banner"
-                sx={{
-                  background:item.img ? `url(${require("../../../build/uploads/" + item.img)}) center/cover fixed no-repeat` : "",
+                sx={{                             
+                  background:item.img ? `url(${require("../../../../user/build/uploads/" + item.img)}) center/cover fixed no-repeat` : "",
                   width: "100vw",
                   height: "52vh",
                   position: "relative",
