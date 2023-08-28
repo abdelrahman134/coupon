@@ -18,6 +18,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Dialog } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+import axiosInstance from "../../axiosInstance";
+
 function Copyright(props) {
   return (
     <Typography
@@ -55,9 +57,6 @@ export default function SignUp() {
     const handleChange=(e)=>{
         setUser(prev=>({...prev,[e.target.name]:e.target.value}))
     }
-    const axiosInstance = axios.create({
-      baseURL: "https://api.easycodesa.com/",
-    });
 
    const handleLogin = async (e) => {
      e.preventDefault();

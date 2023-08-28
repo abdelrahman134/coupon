@@ -6,15 +6,14 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { loginFailure } from '../../redux/user';
+import axiosInstance from "../../axiosInstance.js";
+
 export default function AddCoupon() {
     const[img,setImg]=useState()
     const onInputChange=(e)=>{
         setImg(e.target.files[0])
     }
 const [country, setCountry] = useState();
-const axiosInstance = axios.create({
-  baseURL: "https://api.easycodesa.com/",
-});
 
 const dispatch=useDispatch()
 const handleCont = (value) => {

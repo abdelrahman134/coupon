@@ -10,16 +10,14 @@ import AboutUs from '../../components/AboutUs/AboutUs';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import axiosInstance from '../../axiosInstance.js';
 export default function Home() {
   const [countryFliter,setCountryFilter]=useState([])
   const [data1,setData1]=useState()
   const [filterData,setFilterData]=useState()
   const {currentUser}=useSelector(state=>state)
 const [banner,setBanner]=useState([])
-const axiosInstance = axios.create({
-  baseURL: "https://api.easycodesa.com/",
-});
+
 const role =currentUser?.role?currentUser.role:"emp"
 
   const handleClick=(value)=>{

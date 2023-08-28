@@ -16,6 +16,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginFailure, loginStart, loginSuccess } from "../../redux/user";
 import axios from "axios";
+import axiosInstance from "../../axiosInstance";
 
 function Copyright(props) {
   return (
@@ -46,10 +47,7 @@ export default function SignIn() {
             email: "",
             password:""
           });
-          const axiosInstance = axios.create({
-            baseURL: "https://api.easycodesa.com/",
-          });
-
+          
           const handleChange = (e) => {
             setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
           };
