@@ -60,6 +60,8 @@ import "./Banner.css"
     deleteBanner(e.currentTarget.id);
 
   };
+  
+
 
   return (
     <>
@@ -83,7 +85,7 @@ import "./Banner.css"
               <Box
                 className="banner"
                 sx={{
-                  background: `url(${require("../../../build/uploads/"+item.img)}) center/cover fixed no-repeat`,
+                  background: `url(./uploads/Orange.png) center/cover fixed no-repeat`,
                   width: "100vw",
                   height: "52vh",
                   position: "relative",
