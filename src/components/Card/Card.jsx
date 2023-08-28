@@ -53,7 +53,7 @@ const handleClick=()=>{
           src={`https://api.easycodesa.com/uploads/${item.img} `}
           alt=""
         />
-        <Typography gutterBottom variant="h1" sx={{ fontSize: "20px" }}>
+        <Typography gutterBottom variant="h1" sx={{ fontSize: "35px",fontWeight:"bold" }}>
           {item.companyName}
         </Typography>
 
