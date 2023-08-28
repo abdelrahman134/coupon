@@ -45,6 +45,7 @@ export default function Popover({item}) {
           />
         </Helmet>
       )}
+      
       <Button
         variant="contained"
         onClick={handleClickOpen}
@@ -78,7 +79,7 @@ export default function Popover({item}) {
       >
         <Box
           sx={{
-            width: { xs: "350px", md: "400px" },
+            width: { xs: "340px", md: "400px" },
             height: "450px",
             borderRadius: "10px",
             padding: { xs: "10px 0 ", md: "15px 0 " },

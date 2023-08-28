@@ -169,8 +169,8 @@ const role =currentUser?.role?currentUser.role:"emp"
           display: "flex",
           justifyContent: { xs: "center", md: "flex-end" },
           flexWrap: "wrap",
-          gap: "30px",
-          padding: { xs: "40px 30px", md: "40px 60px" },
+          gap: {xs:"10px",md:"30px"},
+          padding: { xs: "40px 10px", md: "40px 60px" },
         }}
       >
         {(filterData || data1)?.map((item) => (

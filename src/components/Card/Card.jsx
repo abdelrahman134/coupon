@@ -21,7 +21,8 @@ const handleClick=()=>{
     <Card>
       <CardContent
         sx={{
-          width: "250px",
+          width: {xs:"180px",md:"250px"},
+          
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -53,7 +54,7 @@ const handleClick=()=>{
           src={`https://api.easycodesa.com/uploads/${item.img} `}
           alt=""
         />
-        <Typography gutterBottom variant="h1" sx={{ fontSize: "35px",fontWeight:"bold" }}>
+        <Typography gutterBottom variant="h1" sx={{ fontSize: {xs:"30px",md:"35px"},fontWeight:"bold" }}>
           {item.companyName}
         </Typography>
 
