@@ -117,7 +117,7 @@ export default function Popover({ item, id }) {
       >
         <Box
           sx={{
-            minWidth: { xs: "340px", md: "400px" },
+            minWidth: { xs: "300px", md: "400px" },
             borderRadius: "10px",
             padding: { xs: "10px 0 ", md: "15px 0 " },
           }}

@@ -13,14 +13,15 @@ import Popover from "../Popover/Popover"
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-
-export default function Cards({item,role,id,deleteFun,setLike}) {
-  const [openPopup, setOpenPopup] = useState(false);
 const CardContentNoPadding = styled(CardContent)(`
+  padding: 0;
   &:last-child {
     padding-bottom: 0;
   }
 `);
+
+export default function Cards({item,role,id,deleteFun,setLike}) {
+  const [openPopup, setOpenPopup] = useState(false);
 
   const handleClick=()=>{
   deleteFun(id)
@@ -31,7 +32,7 @@ const CardContentNoPadding = styled(CardContent)(`
       <CardContentNoPadding
       
         sx={{
-          width: { xs: "110px", md: "250px" },
+          width: { xs: "150px", md: "250px" },
 
           display: "flex",
           flexDirection: "column",
@@ -95,7 +96,7 @@ const CardContentNoPadding = styled(CardContent)(`
         <Typography
           gutterBottom
           variant="h1"
-          sx={{ fontSize: "12px", height: {xs:"20px",md:"50px"} }}
+          sx={{ fontSize: "12px", height: "50px" }}
           dir="rtl"
         >
           {item.discount} خصم
