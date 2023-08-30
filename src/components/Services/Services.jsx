@@ -41,7 +41,7 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: {xs:"8px",md:"20px"},
+              padding: { xs: "5px", md: "20px" },
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
@@ -52,7 +52,7 @@ export default function Services() {
             <Typography
               sx={{
                 fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "140px", md: "250px" },
+                width: { xs: "130px", md: "250px" },
               }}
             >
               لا نطلب أي معلومات شخصية من العملاء أو الزائرين لموقعنا. ولا
@@ -65,7 +65,7 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: {xs:"8px",md:"20px"},
+              padding: { xs: "5px", md: "20px" },
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
@@ -76,7 +76,7 @@ export default function Services() {
             <Typography
               sx={{
                 fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "140px", md: "250px" },
+                width: { xs: "130px", md: "250px" },
               }}
             >
               نحن نقدم أكواد الخصم لعديد من المتاجر المشاركة معنا، وقد نتلقى
@@ -89,7 +89,7 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: {xs:"8px",md:"20px"},
+              padding: { xs: "5px", md: "20px" },
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
@@ -100,7 +100,7 @@ export default function Services() {
             <Typography
               sx={{
                 fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "140px", md: "250px" },
+                width: { xs: "130px", md: "250px" },
               }}
             >
               نحن نعمل بشكل صريح وشفاف، ونضمن أنه لن يتم استخدام أي معلومات
@@ -113,7 +113,7 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: {xs:"8px",md:"20px"},
+              padding: { xs: "5px", md: "20px" },
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
@@ -121,10 +121,12 @@ export default function Services() {
             <CloudDoneOutlinedIcon
               sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
             />
-            <Typography   sx={{
+            <Typography
+              sx={{
                 fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "140px", md: "250px" },
-              }}>
+                width: { xs: "130px", md: "250px" },
+              }}
+            >
               قد يتم تحديث سياسة الخصوصية بشكل دوري، وسنعمل على إعلام عملائنا
               والزائرين لموقعنا في حالة حدوث ذلك.
             </Typography>
