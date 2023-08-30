@@ -35,9 +35,28 @@ const deleteCoupon = async (req, res, next) => {
     next(e);
   }
 };
+const updateCoupon = async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (req.role === "Admin") {
+      console.log(req.body);
+    const coupon = await Coupon.findOneAndUpdate({ _id: id }, req.body, {
+      new: true,
+      runvalidators: true,
+    });
+
+      res.status(200).json(coupon);
+    } else {
+      return next(createError(403, "You are not admin"));
+    }
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
+};
 
 module.exports = {
   addCoupon,
   deleteCoupon,
-  getCoupon
+  getCoupon,
+  updateCoupon
 };

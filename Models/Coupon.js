@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const couponSchema = Schema({
-
-    companyName: {
+  companyName: {
     type: String,
     required: true,
     trim: true,
@@ -20,11 +19,19 @@ const couponSchema = Schema({
     type: String,
   },
   country: {
-    type: String,
+    type: [String],
     required: true,
   },
   img: {
     type: String,
+  },
+  like: {
+    type: Number,
+    default: 0,
+  },
+  dislike: {
+    type: Number,
+    default: 0,
   },
 });
 
