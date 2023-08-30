@@ -11,13 +11,18 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axiosInstance from '../../axiosInstance.js';
+import Services from '../../components/Services/Services';
 export default function Home() {
   const [countryFliter,setCountryFilter]=useState([])
   const [data1,setData1]=useState()
   const [filterData,setFilterData]=useState()
-  const {currentUser}=useSelector(state=>state)
-const [banner,setBanner]=useState([])
+  const {currentUser}=useSelector(state=>state.user)
+    const {Searchvalue} = useSelector((state) => state.search);
+    const [like,seiLike]=useState()
 
+
+  const [banner,setBanner]=useState([])
+const keys=["companyName","discount"]
 const role =currentUser?.role?currentUser.role:"emp"
 
   const handleClick=(value)=>{
@@ -50,6 +55,7 @@ const role =currentUser?.role?currentUser.role:"emp"
       console.log(e);
     }
   };    
+
       useEffect(()=>{
         const getCoupon=async()=>{
           try{
@@ -79,15 +85,32 @@ const role =currentUser?.role?currentUser.role:"emp"
             if (countryFliter == "كل الدول" || countryFliter == false) {
               return item;
             } else {
-              console.log(item.avability);
-              return countryFliter == item.country;
+              if (Array.isArray(item.country)) {
+                return item.country.includes(countryFliter);
+              } else {
+                return countryFliter == item.country;
+              }
             }
-          })
+          }).filter((item) => keys.some((key) => item[key].toLowerCase().includes(Searchvalue))
+    )
         );
-        
-      },[countryFliter])
+                  // const updatelike = async () => {
+                  //   try {
+                  //     const res = await axiosInstance.patch(
+                  //       `update/${id}`,
+                  //       { like: like + 1 },
+                  //       {
+                  //         withCredentials: true,
+                  //       }
+                  //     );
+                  //   } catch (e) {
+                  //     console.log(e);
+                  //   }
+                  // };
 
+      },[countryFliter,Searchvalue])
       ;
+     
   return (
     <Stack
       flexDirection="column"
@@ -180,10 +203,12 @@ const role =currentUser?.role?currentUser.role:"emp"
             id={item._id}
             role={role}
             deleteFun={deleteFun}
+            setLike={seiLike}
           />
         ))}
       </Box>
       <AboutUs />
+      <Services/>
     </Stack>
   );
 }

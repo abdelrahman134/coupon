@@ -13,6 +13,7 @@ import Login from "./pages/Login/Login"
 import Register from "./pages/Register/Register"
 import AddCoupon from './pages/addCoupon/addCoupon';
 import AddBanner from './pages/addBanner/AddBanner';
+import UpdateCoupon from './pages/updateCoupon/UpdateCoupon';
 const Layout = () => {
   return (
     <div className="app">
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/addBanner",
         element: <AddBanner />,
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateCoupon />,
       },
     ],
   },

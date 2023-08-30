@@ -1,5 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import userReducer from "./user";
+import searchReducer from "./search"
 import {
   persistStore,
   persistReducer,
@@ -16,8 +17,8 @@ const persistConfig = {
   version: 1,
   storage,
 };
-
-const persistedReducer = persistReducer(persistConfig, userReducer);
+const rootReducer = combineReducers({ user: userReducer, search: searchReducer });
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,

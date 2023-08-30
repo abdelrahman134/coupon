@@ -5,15 +5,17 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import EditIcon from "@mui/icons-material/Edit";
 import none from "../../assets/فامكير.svg";
 import "./Card.css";
 import { Box,} from "@mui/material";
 import Popover from "../Popover/Popover"
 import DeleteIcon from "@mui/icons-material/Delete";
-export default function Cards({item,role,id,deleteFun}) {
+import { Link } from "react-router-dom";
+export default function Cards({item,role,id,deleteFun,setLike}) {
   const [openPopup, setOpenPopup] = useState(false);
-  
-const handleClick=()=>{
+
+  const handleClick=()=>{
   deleteFun(id)
 }
 
@@ -21,8 +23,8 @@ const handleClick=()=>{
     <Card>
       <CardContent
         sx={{
-          width: {xs:"180px",md:"250px"},
-          
+          width: { xs: "180px", md: "250px" },
+
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -49,20 +51,54 @@ const handleClick=()=>{
         ) : (
           ""
         )}
+        {(role || "emp") == "Admin" ? (
+          <Link to={`/update/${id}`}>
+            <Box
+              sx={{
+                position: "absolute",
+                top: "5px",
+                left: "5px",
+                cursor: "pointer",
+                color: "green",
+                fontSize: "30px",
+              }}
+            >
+              <EditIcon />
+            </Box>
+          </Link>
+        ) : (
+          ""
+        )}
+
         <img
           className="cardimg"
           src={`https://api.easycodesa.com/uploads/${item.img} `}
           alt=""
         />
-        <Typography gutterBottom variant="h1" sx={{ fontSize: {xs:"30px",md:"35px"},fontWeight:"bold" }}>
+        <Typography
+          gutterBottom
+          variant="h1"
+          sx={{ fontSize: { xs: "25px", md: "30px" }, fontWeight: "bold" }}
+        >
           {item.companyName}
         </Typography>
 
-        <Typography gutterBottom variant="h1" sx={{ fontSize: "20px" }}>
+        <Typography
+          gutterBottom
+          variant="h1"
+          sx={{ fontSize: "16px", height: "35px" }}
+          dir="rtl"
+        >
           {item.discount} خصم
         </Typography>
 
-        <Popover open={openPopup} item={item} img={none} />
+        <Popover
+          open={openPopup}
+          item={item}
+          img={none}
+          id={id}
+          setLike={setLike}
+        />
       </CardContent>
     </Card>
   );

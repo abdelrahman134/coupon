@@ -50,9 +50,10 @@ export default function AddDropdown({handleCont}) {
     );
   };
   React.useEffect(()=>{
-    handleCont(...personName)
+    handleCont(personName)
 
   },[personName])
+ 
 
   return (
     <FormControl sx={{ m: 1, width: "300px", borderRadius: "10px" }}>
@@ -65,7 +66,7 @@ export default function AddDropdown({handleCont}) {
         input={<OutlinedInput label="Name" />}
         MenuProps={MenuProps}
         sx={{ border: "none" }}
-        
+        multiple
       >
         {names.map((name) => (
           <MenuItem

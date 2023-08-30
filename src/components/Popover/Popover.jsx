@@ -12,13 +12,16 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Helmet } from "react-helmet";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
-import like from "../../assets/12.png"
-import dislike from "../../assets/32.png";
-import "./Popover.css"
-export default function Popover({item}) {
+import like1 from "../../assets/12.png";
+import dislike1 from "../../assets/32.png";
+import "./Popover.css";
+import axiosInstance from "../../axiosInstance";
+export default function Popover({ item, id }) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
-  
+  const [like, setLike] = React.useState(item.like);
+  const [dislike, setdisLike] = React.useState(item.dislike);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -26,10 +29,42 @@ export default function Popover({item}) {
   const handleClose = () => {
     setOpen(false);
   };
-  const [copyText,setCopyText]=React.useState(item.couponCode)
-  const handleCopy=()=>{
-    navigator.clipboard.writeText(copyText)
-  }
+  const updatelike = async () => {
+    try {
+      setLike((prev) => prev + 1);
+
+      const res = await axiosInstance.patch(
+        `update/${id}`,
+        { like: like + 1 },
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const updatedislike = async () => {
+    try {
+      setdisLike((prev) => prev + 1);
+
+      const res = await axiosInstance.patch(
+        `update/${id}`,
+        { dislike: dislike + 1 },
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const [copyText, setCopyText] = React.useState(item.couponCode);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyText);
+  };
   const title1 = `اقوي كوبون خصومات - ${item.companyName} اقوي كود خصم  `;
   const description = ` ${item.discount} اكبر كود خصم في 2023 من موقع   ${item?.companyName}  خصومات حتي  `;
   return (
@@ -45,7 +80,7 @@ export default function Popover({item}) {
           />
         </Helmet>
       )}
-      
+
       <Button
         variant="contained"
         onClick={handleClickOpen}
@@ -79,8 +114,7 @@ export default function Popover({item}) {
       >
         <Box
           sx={{
-            width: { xs: "340px", md: "400px" },
-            height: "450px",
+            minWidth: { xs: "340px", md: "400px" },
             borderRadius: "10px",
             padding: { xs: "10px 0 ", md: "15px 0 " },
           }}
@@ -92,7 +126,7 @@ export default function Popover({item}) {
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-end",
-              alignItems: "flex-end",
+              alignItems: "center",
               position: "relative",
               gap: "10px",
             }}
@@ -110,34 +144,42 @@ export default function Popover({item}) {
             </Box>
             <img
               src={`https://api.easycodesa.com/uploads/${item.img}`}
+              className="imgd"
               alt=""
             />
-            <Typography
-              variant="h1"
-              sx={{ fontSize: "40px", fontWeight: "bold" }}
-            >
-              {item.companyName}{" "}
-            </Typography>
           </DialogTitle>
           <DialogContent
             sx={{
               display: "flex",
               flexDirection: "column",
               gap: "20px",
-              alignItems: "flex-end",
+              alignItems: "center",
             }}
           >
-            <Typography variant="h1" sx={{ fontSize: "20px" }}>
+            <Typography
+              variant="h1"
+              sx={{ fontSize: "20px", maxWidth: "300px" }}
+              dir="rtl"
+            >
               {item.discount} خصم{" "}
             </Typography>
 
-            <Typography sx={{ fontSize: "25px" }}>
+            <Typography
+              sx={{
+                fontSize: "25px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
               {" "}
-              <span className="con">
-              الدوله :
-
-              </span>
-               {" "+item.country}
+              <Typography
+                sx={{ fontWeight: "bold", fontSize: "30px" }}
+                className="con"
+              >
+                الدول{" "}
+              </Typography>
+              {item.country.join(" , ")}
             </Typography>
 
             <Box sx={{ display: "flex", gap: "20px" }}>
@@ -166,16 +208,54 @@ export default function Popover({item}) {
                 alignItems: "center",
               }}
             >
-              <img src={dislike} className="iconpop" alt="" />
-
-              <img src={like} className="iconpop" alt="" />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  src={dislike1}
+                  className="iconpop"
+                  alt=""
+                  onClick={updatelike}
+                />
+                <Typography
+                  className="counter"
+                  sx={{ fontSize: "20px", color: "black" }}
+                >
+                  {like}
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  src={like1}
+                  className="iconpop"
+                  alt=""
+                  onClick={updatedislike}
+                />
+                <Typography sx={{ fontSize: "20px", color: "black" }}>
+                  {dislike}
+                </Typography>
+              </Box>
             </Box>
           </DialogContent>
           <DialogActions>
             <Button
               autoFocus
               variant="contained"
-              sx={{ width: "80%", margin: "0 auto",backgroundColor:"rgb(102,45,145,1)" }}
+              sx={{
+                width: "80%",
+                margin: "0 auto",
+                backgroundColor: "rgb(102,45,145,1)",
+              }}
               onClick={handleCopy}
             >
               نسخ الكوبون
