@@ -23,7 +23,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
     <Card>
       <CardContent
         sx={{
-          width: { xs: "180px", md: "250px" },
+          width: { xs: "210px", md: "250px" },
 
           display: "flex",
           flexDirection: "column",
@@ -86,7 +86,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
         <Typography
           gutterBottom
           variant="h1"
-          sx={{ fontSize: "16px", height: "35px" }}
+          sx={{ fontSize: "16px", height: "50px" }}
           dir="rtl"
         >
           {item.discount} خصم

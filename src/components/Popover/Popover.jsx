@@ -179,7 +179,7 @@ export default function Popover({ item, id }) {
               >
                 الدول{" "}
               </Typography>
-              {item.country.join(" , ")}
+              {Array.isArray(item.country)? item?.country?.join(" , "): item.country}
             </Typography>
 
             <Box sx={{ display: "flex", gap: "20px" }}>
