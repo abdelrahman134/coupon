@@ -23,7 +23,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
     <Card>
       <CardContent
         sx={{
-          width: { xs: "210px", md: "250px" },
+          width: { xs: "190px", md: "250px" },
 
           display: "flex",
           flexDirection: "column",
