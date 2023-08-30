@@ -8,7 +8,7 @@ export default function Services() {
   return (
     <Box
       sx={{
-        padding: { xs: "40px 30px", md: "40px 10px" },
+        padding: { xs: "40px 30px", md: "40px 5px" },
         textAlign: "center",
       }}
     >
@@ -47,12 +47,12 @@ export default function Services() {
             }}
           >
             <SecurityIcon
-              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+              sx={{ fontSize: { xs: "35px", md: "50px" }, color: "#662d90" }}
             />
             <Typography
               sx={{
-                fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "130px", md: "250px" },
+                fontSize: { xs: "15px", md: "20px" },
+                width: { xs: "135px", md: "250px" },
               }}
             >
               لا نطلب أي معلومات شخصية من العملاء أو الزائرين لموقعنا. ولا
@@ -71,12 +71,12 @@ export default function Services() {
             }}
           >
             <LocalOfferIcon
-              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+              sx={{ fontSize: { xs: "35px", md: "50px" }, color: "#662d90" }}
             />
             <Typography
               sx={{
-                fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "130px", md: "250px" },
+                fontSize: { xs: "15px", md: "20px" },
+                width: { xs: "135px", md: "250px" },
               }}
             >
               نحن نقدم أكواد الخصم لعديد من المتاجر المشاركة معنا، وقد نتلقى
@@ -95,12 +95,12 @@ export default function Services() {
             }}
           >
             <NoAccountsIcon
-              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+              sx={{ fontSize: { xs: "35px", md: "50px" }, color: "#662d90" }}
             />
             <Typography
               sx={{
-                fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "130px", md: "250px" },
+                fontSize: { xs: "15px", md: "20px" },
+                width: { xs: "135px", md: "250px" },
               }}
             >
               نحن نعمل بشكل صريح وشفاف، ونضمن أنه لن يتم استخدام أي معلومات
@@ -119,12 +119,12 @@ export default function Services() {
             }}
           >
             <CloudDoneOutlinedIcon
-              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+              sx={{ fontSize: { xs: "35px", md: "50px" }, color: "#662d90" }}
             />
             <Typography
               sx={{
-                fontSize: { xs: "10px", md: "20px" },
-                width: { xs: "130px", md: "250px" },
+                fontSize: { xs: "15px", md: "20px" },
+                width: { xs: "135px", md: "250px" },
               }}
             >
               قد يتم تحديث سياسة الخصوصية بشكل دوري، وسنعمل على إعلام عملائنا
