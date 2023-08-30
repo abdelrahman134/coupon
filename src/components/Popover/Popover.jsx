@@ -89,7 +89,8 @@ export default function Popover({ item, id }) {
           backgroundColor: "rgb(102,45,145,1)",
           color: "white",
           width: "100%",
-          marginTop: "10px",
+          marginTop: { xs: "0px", md: "10px" },
+          padding: { xs: "0px" },
         }}
       >
         احصل علي الخصم
@@ -102,7 +103,8 @@ export default function Popover({ item, id }) {
             backgroundColor: "rgb(102,45,145,1)",
             color: "white",
             width: "100%",
-            marginTop: "10px",
+            marginTop: { xs: "4px", md: "10px" },
+            padding: { xs: "0px" },
           }}
         >
           زيارة الموقع
@@ -180,7 +182,9 @@ export default function Popover({ item, id }) {
               >
                 الدول{" "}
               </Typography>
-              {Array.isArray(item.country)? item?.country?.join(" , "): item.country}
+              {Array.isArray(item.country)
+                ? item?.country?.join(" , ")
+                : item.country}
             </Typography>
 
             <Box sx={{ display: "flex", gap: "20px" }}>

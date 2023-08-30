@@ -26,7 +26,6 @@ const names = [
   "السعوديه",
   "كل دوله"
 ];
-export const Country = React.createContext();
 
 function getStyles(name, personName, theme) {
   return {

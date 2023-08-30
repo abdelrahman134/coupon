@@ -12,25 +12,34 @@ import { Box,} from "@mui/material";
 import Popover from "../Popover/Popover"
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+
 export default function Cards({item,role,id,deleteFun,setLike}) {
   const [openPopup, setOpenPopup] = useState(false);
+const CardContentNoPadding = styled(CardContent)(`
+  &:last-child {
+    padding-bottom: 0;
+  }
+`);
 
   const handleClick=()=>{
   deleteFun(id)
 }
 
   return (
-    <Card>
-      <CardContent
+    <Card sx={{padding:"0px"}}>
+      <CardContentNoPadding
+      
         sx={{
-          width: { xs: "190px", md: "250px" },
+          width: { xs: "110px", md: "250px" },
 
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "10px",
+          padding: {xs:"4px",md:"10px"},
           textAlign: "center",
           position: "relative",
+          
         }}
       >
         {(role || "emp") == "Admin" ? (
@@ -78,7 +87,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
         <Typography
           gutterBottom
           variant="h1"
-          sx={{ fontSize: { xs: "25px", md: "30px" }, fontWeight: "bold" }}
+          sx={{ fontSize: { xs: "20px", md: "30px" }, fontWeight: "bold" }}
         >
           {item.companyName}
         </Typography>
@@ -86,7 +95,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
         <Typography
           gutterBottom
           variant="h1"
-          sx={{ fontSize: "16px", height: "50px" }}
+          sx={{ fontSize: "12px", height: {xs:"20px",md:"50px"} }}
           dir="rtl"
         >
           {item.discount} خصم
@@ -99,7 +108,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
           id={id}
           setLike={setLike}
         />
-      </CardContent>
+      </CardContentNoPadding>
     </Card>
   );
 }

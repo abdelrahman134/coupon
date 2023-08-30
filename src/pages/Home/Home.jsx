@@ -194,7 +194,7 @@ const role =currentUser?.role?currentUser.role:"emp"
           display: "flex",
           justifyContent: { xs: "center", md: "flex-end" },
           flexWrap: "wrap",
-          gap: {xs:"10px",md:"30px"},
+          gap: {xs:"2px",md:"30px"},
           padding: { xs: "40px 10px", md: "40px 60px" },
         }}
       >

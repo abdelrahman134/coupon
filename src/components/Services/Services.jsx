@@ -30,7 +30,7 @@ export default function Services() {
         <Box
           sx={{
             display: "flex",
-            gap: "20px",
+            gap: { xs: "5px", md: "20px" },
             flexWrap: "wrap",
             justifyContent: "center",
           }}
@@ -41,13 +41,20 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: "20px",
+              padding: {xs:"8px",md:"20px"},
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
           >
-            <SecurityIcon sx={{ fontSize: "50px", color: "#662d90" }} />
-            <Typography sx={{ fontSize: "20px", width: "250px" }}>
+            <SecurityIcon
+              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+            />
+            <Typography
+              sx={{
+                fontSize: { xs: "10px", md: "20px" },
+                width: { xs: "140px", md: "250px" },
+              }}
+            >
               لا نطلب أي معلومات شخصية من العملاء أو الزائرين لموقعنا. ولا
               نستخدم أي معلومات شخصية ولا نقدمها لأي طرف ثالث.
             </Typography>
@@ -58,15 +65,23 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: "20px",
+              padding: {xs:"8px",md:"20px"},
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
           >
-            <LocalOfferIcon sx={{ fontSize: "50px", color: "#662d90" }} />
-            <Typography sx={{ fontSize: "20px", width: "250px" }}>
+            <LocalOfferIcon
+              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+            />
+            <Typography
+              sx={{
+                fontSize: { xs: "10px", md: "20px" },
+                width: { xs: "140px", md: "250px" },
+              }}
+            >
               نحن نقدم أكواد الخصم لعديد من المتاجر المشاركة معنا، وقد نتلقى
-              بيانات زيارات العملاء والزائرين لتلك المتاجر،            </Typography>
+              بيانات زيارات العملاء والزائرين لتلك المتاجر،{" "}
+            </Typography>
           </Box>
           <Box
             sx={{
@@ -74,13 +89,20 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: "20px",
+              padding: {xs:"8px",md:"20px"},
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
           >
-            <NoAccountsIcon sx={{ fontSize: "50px", color: "#662d90" }} />
-            <Typography sx={{ fontSize: "20px", width: "250px" }}>
+            <NoAccountsIcon
+              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+            />
+            <Typography
+              sx={{
+                fontSize: { xs: "10px", md: "20px" },
+                width: { xs: "140px", md: "250px" },
+              }}
+            >
               نحن نعمل بشكل صريح وشفاف، ونضمن أنه لن يتم استخدام أي معلومات
               شخصية للعملاء أو الزائرين، ولن يتم تقديمها لأي طرف ثالث.{" "}
             </Typography>
@@ -91,13 +113,18 @@ export default function Services() {
               gap: "20px",
               flexDirection: "column",
               alignItems: "center",
-              padding: "20px",
+              padding: {xs:"8px",md:"20px"},
               border: "1px solid #662d90",
               borderRadius: "10px",
             }}
           >
-            <CloudDoneOutlinedIcon sx={{ fontSize: "50px", color: "#662d90" }} />
-            <Typography sx={{ fontSize: "20px", width: "250px" }}>
+            <CloudDoneOutlinedIcon
+              sx={{ fontSize: { xs: "30px", md: "50px" }, color: "#662d90" }}
+            />
+            <Typography   sx={{
+                fontSize: { xs: "10px", md: "20px" },
+                width: { xs: "140px", md: "250px" },
+              }}>
               قد يتم تحديث سياسة الخصوصية بشكل دوري، وسنعمل على إعلام عملائنا
               والزائرين لموقعنا في حالة حدوث ذلك.
             </Typography>
