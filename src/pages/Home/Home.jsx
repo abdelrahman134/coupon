@@ -78,10 +78,12 @@ const role =currentUser?.role?currentUser.role:"emp"
             console.log(e);
           }
         };
+        
         getBanner()
         getCoupon()
         setFilterData(
           data1?.filter((item) => {
+            
             if (countryFliter == "كل الدول" || countryFliter == false) {
               return item;
             } else {

@@ -21,7 +21,7 @@ export default function Popover({ item, id }) {
   const theme = useTheme();
   const [like, setLike] = React.useState(item.like);
   const [dislike, setdisLike] = React.useState(item.dislike);
-  console.log(item.like);
+ 
 
   const handleClickOpen = () => {
     setOpen(true);
