@@ -96,7 +96,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
         <Typography
           gutterBottom
           variant="h1"
-          sx={{ fontSize: "12px", height: "50px" }}
+          sx={{ fontSize: "12px", height: "50px" ,display:"flex",alignItems:"center",justifyContent:"center"}}
           
         >
           {item.discount} خصم
