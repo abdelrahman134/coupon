@@ -18,13 +18,13 @@ const MenuProps = {
 };
 
 const names = [
-  "الامارات العربيه",
+  "الأمارات",
   "الكويت",
   "مصر",
   "قطر",
   "البحرين",
   "السعوديه",
-  "كل دوله"
+  "كل دوله",
 ];
 
 function getStyles(name, personName, theme) {

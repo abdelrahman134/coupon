@@ -6,6 +6,8 @@ import {
   Route,
   Outlet,
 } from "react-router-dom";
+import { ThemeProvider, createTheme } from '@mui/material/styles'; 
+
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
@@ -14,6 +16,13 @@ import Register from "./pages/Register/Register"
 import AddCoupon from './pages/addCoupon/addCoupon';
 import AddBanner from './pages/addBanner/AddBanner';
 import UpdateCoupon from './pages/updateCoupon/UpdateCoupon';
+const theme = createTheme({
+  typography: {
+    allVariants: {
+      fontFamily: 'Rubik'
+    },
+  },
+});
 const Layout = () => {
   return (
     <div className="app">
@@ -58,7 +67,10 @@ const router = createBrowserRouter([
 ]);
 function App() {
   
-  return <RouterProvider router={router} />;
-}
+  return( 
+  <ThemeProvider theme={theme}>
+  <RouterProvider router={router} />
+  </ThemeProvider>
+)}
 
 export default App;

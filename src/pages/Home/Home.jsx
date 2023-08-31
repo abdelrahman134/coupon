@@ -83,14 +83,21 @@ const role =currentUser?.role?currentUser.role:"emp"
         getCoupon()
         setFilterData(
           data1?.filter((item) => {
-            
+         
             if (countryFliter == "كل الدول" || countryFliter == false) {
               return item;
             } else {
               if (Array.isArray(item.country)) {
-                return item.country.includes(countryFliter);
+                   console.log(item.country);
+                return (
+                  item.country.includes(countryFliter) ||
+                  item.country.includes("كل دوله")
+                );
               } else {
-                return countryFliter == item.country;
+                
+                return (
+                  
+                  countryFliter == item.country                 );
               }
             }
           }).filter((item) => keys.some((key) => item[key].toLowerCase().includes(Searchvalue))
@@ -137,7 +144,7 @@ const role =currentUser?.role?currentUser.role:"emp"
       </Helmet>
 
       <Banner data={banner} deleteBanner={deleteBanner} role={role} />
-      <Box sx={{ display: "flex",  justifyContent:"center" }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Link to="register">
           <Button
             variant="contained"
@@ -159,7 +166,10 @@ const role =currentUser?.role?currentUser.role:"emp"
         }}
       >
         <Dropdown handleClick={handleClick} />
-        <Typography sx={{ fontSize: "30px" }} variant="h1">
+        <Typography
+          sx={{ fontSize: "30px",  }}
+          variant="h1"
+        >
           كوبونات خصم 2023
         </Typography>
       </Box>
@@ -194,7 +204,7 @@ const role =currentUser?.role?currentUser.role:"emp"
           display: "flex",
           justifyContent: { xs: "center", md: "flex-end" },
           flexWrap: "wrap",
-          gap: {xs:"10px",md:"30px"},
+          gap: { xs: "10px", md: "30px" },
           padding: { xs: "40px 10px", md: "40px 60px" },
         }}
       >
@@ -210,7 +220,7 @@ const role =currentUser?.role?currentUser.role:"emp"
         ))}
       </Box>
       <AboutUs />
-      <Services/>
+      <Services />
     </Stack>
   );
 }

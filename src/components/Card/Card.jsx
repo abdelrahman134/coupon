@@ -97,7 +97,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
           gutterBottom
           variant="h1"
           sx={{ fontSize: "12px", height: "50px" }}
-          dir="rtl"
+          
         >
           {item.discount} خصم
         </Typography>

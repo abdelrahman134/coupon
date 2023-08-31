@@ -93,7 +93,7 @@ export default function Popover({ item, id }) {
           padding: { xs: "0px" },
         }}
       >
-        احصل علي الخصم
+        احصل على الخصم
       </Button>
       <a href={item.siteLink} rel="nonopener" target="_blank">
         {" "}
@@ -162,7 +162,6 @@ export default function Popover({ item, id }) {
             <Typography
               variant="h1"
               sx={{ fontSize: "20px", maxWidth: "300px" }}
-              dir="rtl"
             >
               {item.discount} خصم{" "}
             </Typography>
@@ -179,8 +178,9 @@ export default function Popover({ item, id }) {
               <Typography
                 sx={{ fontWeight: "bold", fontSize: "30px" }}
                 className="con"
+                dir="rtl"
               >
-                الدول{" "}
+                الدولة:{" "}
               </Typography>
               {Array.isArray(item.country)
                 ? item?.country?.join(" , ")

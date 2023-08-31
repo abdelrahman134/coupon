@@ -34,7 +34,7 @@ React.useEffect(()=>{
           label="Age"
           onChange={handleChange}
         >
-          <MenuItem value={"الامرات العربيه"}>
+          <MenuItem value={  "الأمارات"}>
             <Box sx={{ display: "flex", direction: "row", gap: "5px" }}>
               <img className="dropImg" src={AE} alt="" />
               <Typography>AE</Typography>

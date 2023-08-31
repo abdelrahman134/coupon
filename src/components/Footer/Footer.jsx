@@ -14,7 +14,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import "./Footer.css"
 export default function Footer() {
   const country = [
-    "الامارات العربيه",
+      "الأمارات",
     "الكويت",
     "مصر",
     "قطر",
@@ -54,11 +54,11 @@ export default function Footer() {
       </Box>
       <Box
         sx={{
-          display: "grid",
+          display: { xs: "none", md: "grid" },
           gap: "10px",
           alignItems: "center",
           textAlign: "center",
-          marginBottom:{xs:"0px",md:"30px"}
+          marginBottom: { xs: "0px", md: "30px" },
         }}
       >
         <Typography
@@ -86,21 +86,60 @@ export default function Footer() {
           </a>
         </Box>
       </Box>
-      <Box>
-        <Typography
-          sx={{ fontSize: "30px", textAlign: "right", fontWeight: "400" }}
+      <Box sx={{ display: "flex", gap: "80px" }}>
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            flexDirection:"column",
+            gap: "10px",
+            alignItems: "center",
+            textAlign: "center",
+            marginBottom: { xs: "0px", md: "30px" },
+            padding: "0px",
+          }}
         >
-          الدول
-        </Typography>
-        {country.map((item) => (
           <Typography
-            sx={{
-              textAlign: "right",
-            }}
+            variant="h2"
+            sx={{ fontSize: "30px", marginBottom: "10px" }}
           >
-            {item}
+            تابعنا علي
           </Typography>
-        ))}
+          <Box sx={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+            <a
+              className="icons"
+              href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
+            >
+              <img className="social" src={wh} alt="" />
+            </a>
+
+            <a className="icons" href="https://t.me/EasyCodesa_bot">
+              {" "}
+              <img className="social" src={tel} alt="" />
+            </a>
+
+            <a className="icons" href="https://www.instagram.com/Easycode.sa">
+              {" "}
+              <img className="social" src={ins} alt="" />
+            </a>
+          </Box>
+        </Box>
+
+        <Box>
+          <Typography
+            sx={{ fontSize: "30px", textAlign: "right", fontWeight: "400" }}
+          >
+            الدول
+          </Typography>
+          {country.map((item) => (
+            <Typography
+              sx={{
+                textAlign: "right",
+              }}
+            >
+              {item}
+            </Typography>
+          ))}
+        </Box>
       </Box>
       <Typography
         sx={{
