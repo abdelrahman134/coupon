@@ -87,7 +87,7 @@ const role =currentUser?.role?currentUser.role:"emp"
               return item;
             } else {
               if (Array.isArray(item.country)) {
-                   console.log(item.country);
+
                 return (
                  
                   item.country.includes(countryFliter) ||
@@ -103,8 +103,11 @@ const role =currentUser?.role?currentUser.role:"emp"
               }
             }
           })
-    //       .filter((item) => keys.some((key) => item[key].toLowerCase().includes(Searchvalue))
-    // )
+          .filter((item) =>{
+          const S=Searchvalue||""
+         return( keys.some((key) => item[key].toLowerCase().includes(S))
+         )})
+          
         );
 
       },[countryFliter,Searchvalue])
