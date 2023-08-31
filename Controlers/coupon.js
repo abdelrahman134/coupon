@@ -53,10 +53,23 @@ const updateCoupon = async (req, res) => {
     res.status(500).send(e.message);
   }
 };
+const updatelike = async (req, res) => {
+  try {
+    const id = req.params.id;
+      const coupon = await Coupon.findOneAndUpdate({ _id: id }, req.body, {
+        new: true,
+        runvalidators: true,
+      });
 
+      res.status(200).json(coupon);
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
+};
 module.exports = {
   addCoupon,
   deleteCoupon,
   getCoupon,
-  updateCoupon
+  updateCoupon,
+  updatelike
 };
