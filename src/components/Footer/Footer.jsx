@@ -14,13 +14,14 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import "./Footer.css"
 export default function Footer() {
   const country = [
-      "الأمارات",
+    "السعوديه",
+,    "الأمارات",
     "الكويت",
-    "مصر",
     "قطر",
     "البحرين",
-    "السعوديه",
+    "مصر",
   ];
+
   return (
     <Stack
       sx={{

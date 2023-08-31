@@ -35,7 +35,7 @@ export default function Popover({ item, id }) {
       setLike((prev) => prev + 1);
 
       const res = await axiosInstance.patch(
-        `update/${id}`,
+        `updatelike/${id}`,
         { like: like + 1 },
         {
           withCredentials: true,
@@ -51,7 +51,7 @@ export default function Popover({ item, id }) {
       setdisLike((prev) => prev + 1);
 
       const res = await axiosInstance.patch(
-        `update/${id}`,
+        `updatelike/${id}`,
         { dislike: dislike + 1 },
         {
           withCredentials: true,
@@ -168,7 +168,7 @@ export default function Popover({ item, id }) {
 
             <Typography
               sx={{
-                fontSize: "25px",
+                fontSize: "20px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -176,7 +176,7 @@ export default function Popover({ item, id }) {
             >
               {" "}
               <Typography
-                sx={{ fontWeight: "bold", fontSize: "30px" }}
+                sx={{ fontWeight: "bold", fontSize: "25px" }}
                 className="con"
                 dir="rtl"
               >

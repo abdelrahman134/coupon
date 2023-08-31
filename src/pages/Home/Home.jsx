@@ -81,8 +81,7 @@ const role =currentUser?.role?currentUser.role:"emp"
         
         getBanner()
         getCoupon()
-        setFilterData(
-          data1?.filter((item) => {
+        setFilterData(data1?.filter((item) => {
          
             if (countryFliter == "كل الدول" || countryFliter == false) {
               return item;
@@ -90,10 +89,13 @@ const role =currentUser?.role?currentUser.role:"emp"
               if (Array.isArray(item.country)) {
                    console.log(item.country);
                 return (
+                 
                   item.country.includes(countryFliter) ||
-                  item.country.includes("كل دوله")
+                  item.country.includes("كل دول")
                 );
               } else {
+                   
+
                 
                 return (
                   
@@ -103,22 +105,9 @@ const role =currentUser?.role?currentUser.role:"emp"
           }).filter((item) => keys.some((key) => item[key].toLowerCase().includes(Searchvalue))
     )
         );
-                  // const updatelike = async () => {
-                  //   try {
-                  //     const res = await axiosInstance.patch(
-                  //       `update/${id}`,
-                  //       { like: like + 1 },
-                  //       {
-                  //         withCredentials: true,
-                  //       }
-                  //     );
-                  //   } catch (e) {
-                  //     console.log(e);
-                  //   }
-                  // };
 
       },[countryFliter,Searchvalue])
-      ;
+      
      
   return (
     <Stack

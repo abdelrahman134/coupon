@@ -24,7 +24,7 @@ const names = [
   "قطر",
   "البحرين",
   "السعوديه",
-  "كل دوله",
+  "كل دول",
 ];
 
 function getStyles(name, personName, theme) {
