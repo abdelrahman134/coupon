@@ -102,8 +102,9 @@ const role =currentUser?.role?currentUser.role:"emp"
                   countryFliter == item.country                 );
               }
             }
-          }).filter((item) => keys.some((key) => item[key].toLowerCase().includes(Searchvalue))
-    )
+          })
+    //       .filter((item) => keys.some((key) => item[key].toLowerCase().includes(Searchvalue))
+    // )
         );
 
       },[countryFliter,Searchvalue])
