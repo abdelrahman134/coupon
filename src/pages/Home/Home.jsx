@@ -103,15 +103,16 @@ const role =currentUser?.role?currentUser.role:"emp"
             }
           })
           .filter((item) =>{
+            const s=Searchvalue||""
         
-         return( keys.some((key) => item[key].toLowerCase().includes(Searchvalue))
+         return( keys.some((key) => item[key].toLowerCase().includes(s))
          )})
           
         );
 
       },[countryFliter,Searchvalue])
       
-     
+
   return (
     <Stack
       flexDirection="column"
