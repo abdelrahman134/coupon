@@ -159,12 +159,8 @@ const role =currentUser?.role?currentUser.role:"emp"
         }}
       >
         <Dropdown handleClick={handleClick} />
-        <Typography
-          sx={{ fontSize: "30px",  }}
-          variant="h1"
-        >
-          كوبونات خصم 2023
-        </Typography>
+<h1> كوبونات خصم 2023
+</h1>                 
       </Box>
       {role == "Admin" ? (
         <Box sx={{ display: "flex", gap: "10px", justifyContent: "flex-end" }}>
