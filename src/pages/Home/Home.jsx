@@ -125,6 +125,7 @@ const role =currentUser?.role?currentUser.role:"emp"
     >
       <Helmet>
         <title>Easy Code</title>
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
         <meta
           name="description"
