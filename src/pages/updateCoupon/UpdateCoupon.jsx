@@ -78,11 +78,11 @@ if (country!=[]&&country) {
       direction="row"
       sx={{ height: "80vh", alignItems: "center", justifyContent: "center" }}
     >
-      <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-      <link rel="icon" href="%PUBLIC_URL%/fav.ico" />
-
       <Helmet>
         <title>Easy Code</title>
+
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="icon" href="%PUBLIC_URL%/fav.ico" />
 
         <meta
           name="description"

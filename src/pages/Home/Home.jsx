@@ -20,7 +20,6 @@ export default function Home() {
   const {Searchvalue} = useSelector((state) => state.search);
   const [like,seiLike]=useState()
 
-console.log("df"+Searchvalue);
   const [banner,setBanner]=useState([])
 const keys=["companyName","discount"]
 const role =currentUser?.role?currentUser.role:"emp"
@@ -125,7 +124,7 @@ const role =currentUser?.role?currentUser.role:"emp"
     >
       <Helmet>
         <title>Easy Code</title>
-        <link rel="icon" href="%PUBLIC_URL%/fav.ico" />
+        <link rel="icon" href="fav.ico" />
 
         <meta
           name="description"
