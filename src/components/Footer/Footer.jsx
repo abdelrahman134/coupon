@@ -14,7 +14,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import "./Footer.css"
 export default function Footer() {
   const country = [
-    "السعوديه",
+    "السعودية",
 ,    "الأمارات",
     "الكويت",
     "قطر",

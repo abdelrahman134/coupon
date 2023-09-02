@@ -103,15 +103,18 @@ const role =currentUser?.role?currentUser.role:"emp"
             }
           })
           .filter((item) =>{
-            const s=Searchvalue||""
-        
-         return( keys.some((key) => item[key].toLowerCase().includes(s))
-         )})
+          if (!Searchvalue ) {
+            return item;
+          } else {
+            return keys.some((key) =>
+              item[key].toLowerCase().includes(Searchvalue)
+            );
+          }})
           
         );
 
       },[countryFliter,Searchvalue])
-      
+    
 
   return (
     <Stack
