@@ -81,7 +81,7 @@ export default function SignIn() {
     <ThemeProvider theme={defaultTheme}>
       <Helmet>
         <title>Easy Code</title>
-        <link rel="icon" href="f.ico" />
+        <link rel="icon" href="f.png" />
 
         <meta
           name="description"
