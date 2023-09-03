@@ -163,7 +163,7 @@ const role =currentUser?.role?currentUser.role:"emp"
           justifyContent: "space-between",
           marginBottom: "20px",
           padding: { xs: "40px 30px", md: "40px 60px" },
-          gap:{xs:"20px",md:"0px"}
+          gap:{xs:"30px",md:"0px"}
         }}
       >
         <Dropdown handleClick={handleClick} />

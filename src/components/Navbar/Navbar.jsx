@@ -199,7 +199,7 @@ function DrawerAppBar(props) {
           sx={{
             display: "flex",
             width: "100%",
-            justifyContent: { xs: "space-evenly", md: "space-between" },
+            justifyContent: "space-between",
             alignItems: "center",
           }}
         >
@@ -213,10 +213,9 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Link to="/" className="imn">
-            <Box sx={{textAlign:"center"}}>
-              <img src={logo} alt="" />
-            </Box>
+            <img src={logo} alt="" />
           </Link>
+          <Typography sx={{visibility:"hidden"}}>dd</Typography>
           {/* <SearchBar sx={{ display: { xs: "none", sm: "block" } }} /> */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
