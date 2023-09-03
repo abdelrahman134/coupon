@@ -130,7 +130,7 @@ const role =currentUser?.role?currentUser.role:"emp"
     >
       <Helmet>
         <title>Easy Code</title>
-        <link rel="icon" href="f.png" />
+        <link rel="icon" href="fa.ico" />
 
         <meta
           name="description"
@@ -168,7 +168,7 @@ const role =currentUser?.role?currentUser.role:"emp"
       >
         <Dropdown handleClick={handleClick} />
         <SearchBar setSearchInput={setSearchInput}/>
-        <Typography variant='h1' sx={{fontSize:"40px"}}>الموضوع اسهل ماتتوقع</Typography>
+        <Typography variant='h1' sx={{fontSize:{xs:"30px",md:"40px"}}}>الموضوع اسهل ماتتوقع</Typography>
 
       </Box>
       {role == "Admin" ? (

@@ -23,7 +23,7 @@ export default function SearchBar({setSearchInput}) {
         pl: 2,
         boxShadow: "none",
         mr: { sm: 5 },
-        width: { xs: "60%", md: "40%" },
+        width: { xs: "80%", md: "40%" },
       }}
     >
       <input

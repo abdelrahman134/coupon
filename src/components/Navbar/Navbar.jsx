@@ -199,7 +199,7 @@ function DrawerAppBar(props) {
           sx={{
             display: "flex",
             width: "100%",
-            justifyContent: "space-between",
+            justifyContent: {xs:"",md:"space-between"},
             alignItems: "center",
           }}
         >
@@ -212,7 +212,7 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Link to="/" className="imn">
+          <Link to="/" className="imn" >
             <img src={logo} alt="" />
           </Link>
           {/* <SearchBar sx={{ display: { xs: "none", sm: "block" } }} /> */}

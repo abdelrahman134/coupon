@@ -82,7 +82,7 @@ if (country!=[]&&country) {
         <title>Easy Code</title>
 
         <link rel="apple-touch-icon" href="logo.png" />
-        <link rel="icon" href="f.png" />
+        <link rel="icon" href="fa.ico" />
 
         <meta
           name="description"

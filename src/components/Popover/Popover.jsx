@@ -161,9 +161,10 @@ export default function Popover({ item, id }) {
           >
             <Typography
               variant="h1"
-              sx={{ fontSize: "20px", maxWidth: "300px" }}
+              sx={{ fontSize: "20px", maxWidth: "300px",textAlign:"center" }}
+              
             >
-              {item.discount} خصم{" "}
+              {item.discount} خصم
             </Typography>
 
             <Typography
