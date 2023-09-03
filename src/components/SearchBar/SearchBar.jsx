@@ -3,14 +3,14 @@ import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import "./SearchBar.css"
 import { Input } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { SearchInput } from "../../redux/search";
-export default function SearchBar() {
-  const dispatch = useDispatch();
+// import { useDispatch } from "react-redux";
+// import { SearchInput } from "../../redux/search";
+export default function SearchBar({setSearchInput}) {
+  // const dispatch = useDispatch();
   const handleChange = (e) => {
     // setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    
-    dispatch(SearchInput(e.target.value));
+    setSearchInput(e.target.value);
+    // dispatch(SearchInput(e.target.value));
 
   };
 

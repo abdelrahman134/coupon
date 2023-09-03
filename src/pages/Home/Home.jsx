@@ -12,14 +12,16 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axiosInstance from '../../axiosInstance.js';
 import Services from '../../components/Services/Services';
+import SearchBar from "../../components/SearchBar/SearchBar";
 export default function Home() {
   const [countryFliter,setCountryFilter]=useState([])
   const [data1,setData1]=useState()
   const [filterData,setFilterData]=useState()
-  const {currentUser}=useSelector(state=>state.user)
-  const {Searchvalue} = useSelector((state) => state.search);
+  const {currentUser}=useSelector(state=>state)
+  // const {Searchvalue} = useSelector((state) => state.search);
   const [like,seiLike]=useState()
-
+  const [SearchInput,setSearchInput ] = useState();
+// console.log(currentUser);
   const [banner,setBanner]=useState([])
 const keys=["companyName","discount"]
 const role =currentUser?.role?currentUser.role:"emp"
@@ -103,18 +105,18 @@ const role =currentUser?.role?currentUser.role:"emp"
             }
           })
           .filter((item) =>{
-          if (!Searchvalue ) {
+          if (!SearchInput ) {
             return item;
           } else {
             return keys.some((key) =>
-              item[key].toLowerCase().includes(Searchvalue)
+              item[key].toLowerCase().includes(SearchInput)
             );
           }})
           
         );
 
-      },[countryFliter,Searchvalue])
-    
+      },[countryFliter,SearchInput])
+
 
   return (
     <Stack
@@ -156,14 +158,18 @@ const role =currentUser?.role?currentUser.role:"emp"
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column-reverse", md: "row" },
           alignItems: "center",
           justifyContent: "space-between",
           marginBottom: "20px",
           padding: { xs: "40px 30px", md: "40px 60px" },
+          gap:{xs:"20px",md:"0px"}
         }}
       >
         <Dropdown handleClick={handleClick} />
-        <h1> كوبونات خصم 2023</h1>
+        <SearchBar setSearchInput={setSearchInput}/>
+        <Typography variant='h1' sx={{fontSize:"40px"}}>الموضوع اسهل ماتتوقع</Typography>
+
       </Box>
       {role == "Admin" ? (
         <Box sx={{ display: "flex", gap: "10px", justifyContent: "flex-end" }}>

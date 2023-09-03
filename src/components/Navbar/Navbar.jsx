@@ -215,7 +215,7 @@ function DrawerAppBar(props) {
           <Link to="/" className="imn">
             <img src={logo} alt="" />
           </Link>
-          <SearchBar sx={{ display: { xs: "none", sm: "block" } }} />
+          {/* <SearchBar sx={{ display: { xs: "none", sm: "block" } }} /> */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: "black" }}>
