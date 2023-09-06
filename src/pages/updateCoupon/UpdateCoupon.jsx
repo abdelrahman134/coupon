@@ -81,8 +81,8 @@ if (country!=[]&&country) {
       <Helmet>
         <title>Easy Code</title>
 
-        <link rel="apple-touch-icon" href="logo.png" />
-        <link rel="icon" href="fa.ico" />
+        <link rel="icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="android-chrome-192x192.png" />
 
         <meta
           name="description"

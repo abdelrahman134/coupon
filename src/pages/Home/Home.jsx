@@ -130,7 +130,8 @@ const role =currentUser?.role?currentUser.role:"emp"
     >
       <Helmet>
         <title>Easy Code</title>
-        <link rel="icon" href="fa.ico" />
+        <link rel="icon" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="android-chrome-192x192.png" />
 
         <meta
           name="description"
@@ -163,13 +164,14 @@ const role =currentUser?.role?currentUser.role:"emp"
           justifyContent: "space-between",
           marginBottom: "20px",
           padding: { xs: "40px 30px", md: "40px 60px" },
-          gap:{xs:"30px",md:"0px"}
+          gap: { xs: "30px", md: "0px" },
         }}
       >
         <Dropdown handleClick={handleClick} />
-        <SearchBar setSearchInput={setSearchInput}/>
-        <Typography variant='h1' sx={{fontSize:{xs:"30px",md:"40px"}}}>الموضوع اسهل ماتتوقع</Typography>
-
+        <SearchBar setSearchInput={setSearchInput} />
+        <Typography variant="h1" sx={{ fontSize: { xs: "30px", md: "40px" } }}>
+          الموضوع اسهل ماتتوقع
+        </Typography>
       </Box>
       {role == "Admin" ? (
         <Box sx={{ display: "flex", gap: "10px", justifyContent: "flex-end" }}>
