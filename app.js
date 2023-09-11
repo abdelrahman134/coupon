@@ -5,7 +5,7 @@ const auth= require("./Routers/auth.js")
 const coupon=require("./Routers/coupon.js")
 const addCoupon = require("./Routers/addCoupon.js");
 const addBanner = require("./Routers/addBanner.js");
-
+const compression = require("compression")
 const cookieParser = require("cookie-parser");
 const port=5000
 const mongoose = require("mongoose");
@@ -17,7 +17,7 @@ mongoose.connect(
   "mongodb://127.0.0.1:27017/coupon"
 );
 app.use(express.json()) 
-
+app.use(compression())
 app.use(
   cors({
     origin: [
