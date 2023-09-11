@@ -101,7 +101,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
      
                 <LazyLoadImage
                   className="bannerImg"
-                  src={`https://api.easycodesa.com/uploads/${item.img}`}
+                  src={`https://api.easycodesa.com/upload/${item.img}`}
                   alt="pic"
                 />
                 {(role || "emp") == "Admin" ? (
