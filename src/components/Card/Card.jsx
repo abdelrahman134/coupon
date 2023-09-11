@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import EditIcon from "@mui/icons-material/Edit";
 import none from "../../assets/فامكير.svg";
@@ -13,6 +10,10 @@ import Popover from "../Popover/Popover"
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
+import {
+  LazyLoadImage,
+ 
+} from "react-lazy-load-image-component";
 const CardContentNoPadding = styled(CardContent)(`
   padding: 0;
   &:last-child {
@@ -20,7 +21,7 @@ const CardContentNoPadding = styled(CardContent)(`
   }
 `);
 
-export default function Cards({item,role,id,deleteFun,setLike}) {
+export default function Cards({item,role,id,deleteFun}) {
   const [openPopup, setOpenPopup] = useState(false);
 
   const handleClick=()=>{
@@ -28,19 +29,17 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
 }
 
   return (
-    <Card sx={{padding:"0px"}}>
+    <Card sx={{ padding: "0px" }}>
       <CardContentNoPadding
-      
         sx={{
           width: { xs: "150px", md: "250px" },
 
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: {xs:"4px",md:"10px"},
+          padding: { xs: "4px", md: "10px" },
           textAlign: "center",
           position: "relative",
-          
         }}
       >
         {(role || "emp") == "Admin" ? (
@@ -80,10 +79,15 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
           ""
         )}
 
-        <img
+        {/* <img
           className="cardimg"
           src={`https://api.easycodesa.com/uploads/${item.img} `}
           alt=""
+        /> */}
+        <LazyLoadImage
+          className="cardimg"
+          src={`https://api.easycodesa.com/uploads/${item.img} `}
+          alt="pic"
         />
         <Typography
           gutterBottom
@@ -96,8 +100,13 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
         <Typography
           gutterBottom
           variant="h1"
-          sx={{ fontSize: "12px", height: "50px" ,display:"flex",alignItems:"center",justifyContent:"center"}}
-          
+          sx={{
+            fontSize: "12px",
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
           {item.discount} خصم
         </Typography>
@@ -107,7 +116,7 @@ export default function Cards({item,role,id,deleteFun,setLike}) {
           item={item}
           img={none}
           id={id}
-          setLike={setLike}
+        
         />
       </CardContentNoPadding>
     </Card>

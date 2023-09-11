@@ -48,13 +48,11 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import orange from "../../assets/Orange.png";
-import banner1 from "../../assets/banner1.png";
-import banner2 from "../../assets/banner2.png";
-              import DeleteIcon from "@mui/icons-material/Delete";
+            import DeleteIcon from "@mui/icons-material/Delete";
   
 import { Box, Button, Typography } from '@mui/material';
 import "./Banner.css"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
  function Banner({data,role,deleteBanner}) {
   const handleClick = (e) => {
     deleteBanner(e.currentTarget.id);
@@ -100,11 +98,12 @@ import "./Banner.css"
                   position: "relative",
                 }}
               >
-                <img
-                  src={`https://api.easycodesa.com/uploads/${item.img}`}
+     
+                <LazyLoadImage
                   className="bannerImg"
-                  alt=""
-                />{" "}
+                  src={`https://api.easycodesa.com/uploads/${item.img}`}
+                  alt="pic"
+                />
                 {(role || "emp") == "Admin" ? (
                   <div id={item._id} onClick={handleClick}>
                     <Box

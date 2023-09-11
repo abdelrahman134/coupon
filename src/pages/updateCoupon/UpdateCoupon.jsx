@@ -1,19 +1,15 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./updatecoupon.css";
-import AddDropdown, { Country } from "../../components/AddDropdown/AddDropdown";
-import axios from "axios";
+import AddDropdown  from "../../components/AddDropdown/AddDropdown";
 import { useDispatch } from "react-redux";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { loginFailure } from "../../redux/user";
 import axiosInstance from "../../axiosInstance.js";
 import { Helmet } from "react-helmet";
 
 export default function UpdateCoupon() {
-  const [img, setImg] = useState();
-  const onInputChange = (e) => {
-    setImg(e.target.files[0]);
-  };
+ 
   const [country, setCountry] = useState();
  const {id}=useParams()
   const dispatch = useDispatch();
@@ -53,14 +49,14 @@ if (coupon.couponCode) {
 }
 if (coupon.siteLink) {
   formData.append("siteLink", coupon.siteLink);
-  data ['siteLink' ]=coupon.siteLink
+  data['siteLink']=coupon.siteLink
 }
-if (country!=[]&&country) {
+if (country!==[]&&country) {
   formData.append("country", country);
-  data ["country"]=country
+  data["country"]=country
 
 }
-      const res = await axiosInstance.patch(
+      await axiosInstance.patch(
         `update/${id}`,data,
         {
           withCredentials: true,

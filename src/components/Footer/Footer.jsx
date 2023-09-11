@@ -5,17 +5,12 @@ import ins from "../../assets/1.png";
 import tel from "../../assets/2.png";
 import wh from "../../assets/3.png";
 
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TelegramIcon from "@mui/icons-material/Telegram";
 import "./Footer.css"
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Footer() {
   const country = [
     "السعودية",
-,    "الأمارات",
+   "الأمارات",
     "الكويت",
     "قطر",
     "البحرين",
@@ -43,7 +38,8 @@ export default function Footer() {
           alignItems: { xs: "center" },
         }}
       >
-        <img src={logo} className="img1" alt="" />
+        <LazyLoadImage src={logo} className="img1" alt="pic" />
+
         <Typography
           sx={{
             marginTop: { xs: "0px", md: "60px" },
@@ -73,17 +69,18 @@ export default function Footer() {
             className="icons"
             href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
           >
-            <img className="social" src={wh} alt="" />
+            <LazyLoadImage className="social" src={wh} alt="pic" />
           </a>
 
           <a className="icons" href="https://t.me/EasyCodesa_bot">
             {" "}
-            <img className="social" src={tel} alt="" />
+            <LazyLoadImage className="social" src={tel} alt="pic" />
           </a>
 
           <a className="icons" href="https://www.instagram.com/Easycode.sa">
             {" "}
-            <img className="social" src={ins} alt="" />
+
+            <LazyLoadImage className="social" src={ins} alt="pic" />
           </a>
         </Box>
       </Box>
@@ -91,7 +88,7 @@ export default function Footer() {
         <Box
           sx={{
             display: { xs: "flex", md: "none" },
-            flexDirection:"column",
+            flexDirection: "column",
             gap: "10px",
             alignItems: "center",
             textAlign: "center",

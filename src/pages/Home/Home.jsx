@@ -1,13 +1,10 @@
 import { Box, Button, Stack, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Cards from '../../components/Card/Card';
-import {data} from "../../components/data"
 import Banner from '../../components/Banner/Banner';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import Helmet from "react-helmet"
-import orange from "../../assets/Orange.png";
 import AboutUs from '../../components/AboutUs/AboutUs';
-import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axiosInstance from '../../axiosInstance.js';
@@ -19,7 +16,7 @@ export default function Home() {
   const [filterData,setFilterData]=useState()
   const {currentUser}=useSelector(state=>state)
   // const {Searchvalue} = useSelector((state) => state.search);
-  const [like,seiLike]=useState()
+
   const [SearchInput,setSearchInput ] = useState();
 // console.log(currentUser);
   const [banner,setBanner]=useState([])
@@ -84,7 +81,7 @@ const role =currentUser?.role?currentUser.role:"emp"
         getCoupon()
         setFilterData(data1?.filter((item) => {
          
-            if (countryFliter == "كل الدول" || countryFliter == false) {
+            if (countryFliter === "كل الدول" || countryFliter == false) {
               return item;
             } else {
               if (Array.isArray(item.country)) {
@@ -215,7 +212,7 @@ const role =currentUser?.role?currentUser.role:"emp"
             id={item._id}
             role={role}
             deleteFun={deleteFun}
-            setLike={seiLike}
+        
           />
         ))}
       </Box>

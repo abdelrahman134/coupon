@@ -1,7 +1,5 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import about from "../../assets/about.jpg"
-import about1 from "../../assets/about.png";
 
 import "./about.css"
 export default function AboutUs() {

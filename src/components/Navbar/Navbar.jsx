@@ -64,12 +64,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import logo from "../../assets/logo.png";
 import "./navbar.css";
-import SearchBar from "../SearchBar/SearchBar";
-import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
-import Dropdown from "../Dropdown/Dropdown";
 import { Link } from "react-router-dom";
 import tel from "../../assets/2.png";
 import wh from "../../assets/3.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const drawerWidth = 240;
 const navItems = [
@@ -86,7 +84,7 @@ const navItems = [
       className="icons"
       href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
     >
-      <img className="navs" src={wh} alt="" />
+      <LazyLoadImage className="navs" src={wh} alt="pic" />
     </a>
   </Box>,
 
@@ -103,20 +101,18 @@ const navItems = [
 
     <a className="icons" href="https://t.me/EasyCodesa_bot">
       {" "}
-      <img className="navs" src={tel} alt="" />
+   
+      <LazyLoadImage className="navs" src={tel} alt="pic" />
     </a>
   </Box>,
-  <Link to="/login" >
-    
-      تسجيل الدخول
-  </Link>,
+  <Link to="/login">تسجيل الدخول</Link>,
   "جميع المتاجر",
   "عروض اليوم",
 ];
 const navItemsmall = [
   "جميع المتاجر",
   "عروض اليوم",
-  
+
   <Link to="/login">تسجيل الدخول</Link>,
   <Box sx={{ display: "flex", justifyContent: "center", gap: "20px" }}>
     <Box
@@ -132,7 +128,7 @@ const navItemsmall = [
         className="icons"
         href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
       >
-        <img className="navs" src={wh} alt="" />
+        <LazyLoadImage className="navs" src={wh} alt="pic" />
       </a>
     </Box>
 
@@ -148,8 +144,8 @@ const navItemsmall = [
   تلقرلم بوت        </Typography> */}
 
       <a className="icons" href="https://t.me/EasyCodesa_bot">
-        {" "}
-        <img className="navs" src={tel} alt="" />
+       
+        <LazyLoadImage className="navs" src={tel} alt="pic" />
       </a>
     </Box>
   </Box>,
@@ -164,7 +160,9 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img src={logo} alt="" />
+   
+      <LazyLoadImage src={logo} alt="pic" />
+
       <Divider />
       <List>
         {navItemsmall.map((item) => (
@@ -213,9 +211,10 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Link to="/" className="imn">
-            <img src={logo} alt="" />
+
+            <LazyLoadImage  src={logo} alt="pic" />
           </Link>
-          <Typography sx={{visibility:"hidden"}}>dd</Typography>
+          <Typography sx={{ visibility: "hidden" }}>dd</Typography>
           {/* <SearchBar sx={{ display: { xs: "none", sm: "block" } }} /> */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (

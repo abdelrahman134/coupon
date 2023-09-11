@@ -1,10 +1,8 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
-import React, { useContext, useState } from "react";
+import React, {useState } from "react";
 import "./addBanner.css";
-import AddDropdown, { Country } from "../../components/AddDropdown/AddDropdown";
-import axios from "axios";
 import { useDispatch } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginFailure } from "../../redux/user";
 import axiosInstance from "../../axiosInstance.js";
 
@@ -33,7 +31,7 @@ export default function AddBanner() {
       formData.append("img", img);
       formData.append("name", coupon.name);
       formData.append("link", coupon.link);
-      const res = await axiosInstance.post("addBanner", formData, {
+      await axiosInstance.post("addBanner", formData, {
         withCredentials: true,
       });
      

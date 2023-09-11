@@ -1,10 +1,9 @@
 import { Box, Button, Stack, Typography } from '@mui/material'
-import React, { useContext, useState } from 'react'
+import React, {  useState } from 'react'
 import "./addCoupon.css"
-import AddDropdown, { Country } from '../../components/AddDropdown/AddDropdown';
-import axios from 'axios';
+import AddDropdown  from '../../components/AddDropdown/AddDropdown';
 import { useDispatch } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { loginFailure } from '../../redux/user';
 import axiosInstance from "../../axiosInstance.js";
 import { Helmet } from 'react-helmet';
@@ -48,7 +47,7 @@ const handleLogin = async (e) => {
           
           
           
-    const res = await axiosInstance.post("add", formData, {
+    await axiosInstance.post("add", formData, {
       withCredentials: true,
     });
     navigate("/");

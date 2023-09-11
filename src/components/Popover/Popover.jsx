@@ -3,22 +3,17 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { Helmet } from "react-helmet";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import like1 from "../../assets/12.png";
 import dislike1 from "../../assets/32.png";
 import "./Popover.css";
 import axiosInstance from "../../axiosInstance";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Popover({ item, id }) {
   const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
   const [like, setLike] = React.useState(item.like);
   const [dislike, setdisLike] = React.useState(item.dislike);
  
@@ -34,7 +29,7 @@ export default function Popover({ item, id }) {
     try {
       setLike((prev) => prev + 1);
 
-      const res = await axiosInstance.patch(
+       await axiosInstance.patch(
         `updatelike/${id}`,
         { like: like + 1 },
         {
@@ -50,7 +45,7 @@ export default function Popover({ item, id }) {
     try {
       setdisLike((prev) => prev + 1);
 
-      const res = await axiosInstance.patch(
+       await axiosInstance.patch(
         `updatelike/${id}`,
         { dislike: dislike + 1 },
         {
@@ -95,8 +90,7 @@ export default function Popover({ item, id }) {
       >
         احصل على الخصم
       </Button>
-      <a href={item.siteLink} rel="nonopener" target="_blank">
-        {" "}
+      <a href={item.siteLink}  target="_blank" rel="noreferrer">
         <Button
           variant="contained"
           sx={{
@@ -145,10 +139,10 @@ export default function Popover({ item, id }) {
             >
               <CloseIcon />
             </Box>
-            <img
-              src={`https://api.easycodesa.com/uploads/${item.img}`}
+            <LazyLoadImage
               className="imgd"
-              alt=""
+              src={`https://api.easycodesa.com/uploads/${item.img}`}
+              alt="pic"
             />
           </DialogTitle>
           <DialogContent
@@ -161,8 +155,7 @@ export default function Popover({ item, id }) {
           >
             <Typography
               variant="h1"
-              sx={{ fontSize: "20px", maxWidth: "300px",textAlign:"center" }}
-              
+              sx={{ fontSize: "20px", maxWidth: "300px", textAlign: "center" }}
             >
               {item.discount} خصم
             </Typography>
@@ -221,12 +214,13 @@ export default function Popover({ item, id }) {
                   alignItems: "center",
                 }}
               >
-                <img
+                <LazyLoadImage
+                  alt="pic"
                   src={dislike1}
                   className="iconpop"
-                  alt=""
                   onClick={updatelike}
                 />
+
                 <Typography
                   className="counter"
                   sx={{ fontSize: "20px", color: "black" }}
@@ -241,12 +235,13 @@ export default function Popover({ item, id }) {
                   alignItems: "center",
                 }}
               >
-                <img
+                <LazyLoadImage
+                  alt="pic"
                   src={like1}
                   className="iconpop"
-                  alt=""
                   onClick={updatedislike}
                 />
+
                 <Typography sx={{ fontSize: "20px", color: "black" }}>
                   {dislike}
                 </Typography>

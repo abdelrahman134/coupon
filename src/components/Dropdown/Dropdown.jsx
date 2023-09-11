@@ -14,6 +14,7 @@ import Select from '@mui/material/Select';
 import { Typography } from '@mui/material';
 import q from "../../assets/q.jpeg"
 import b from "../../assets/b.jpeg";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Dropdown({handleClick}) {
   const [age, setAge] = React.useState('');
@@ -36,7 +37,7 @@ React.useEffect(()=>{
           label="Age"
           onChange={handleChange}
         >
-                    <MenuItem value={"السعودية"}>
+          <MenuItem value={"السعودية"}>
             <Box
               sx={{
                 display: "flex",
@@ -45,11 +46,10 @@ React.useEffect(()=>{
                 gap: "5px",
               }}
             >
-              <img className="dropImg" src={SA} alt="" />
+              <LazyLoadImage className="dropImg" src={SA} alt="pic" />
               <Typography>SA</Typography>
             </Box>
           </MenuItem>
-
           <MenuItem value={"الأمارات"}>
             <Box
               sx={{
@@ -59,11 +59,11 @@ React.useEffect(()=>{
                 gap: "5px",
               }}
             >
-              <img className="dropImg" src={AE} alt="" />
+              <LazyLoadImage className="dropImg" src={AE} alt="pic" />
               <Typography>AE</Typography>
             </Box>
           </MenuItem>
-                    <MenuItem value={"الكويت"}>
+          <MenuItem value={"الكويت"}>
             <Box
               sx={{
                 display: "flex",
@@ -72,11 +72,12 @@ React.useEffect(()=>{
                 gap: "5px",
               }}
             >
-              <img className="dropImg" src={KE} alt="" />
+              <LazyLoadImage className="dropImg" src={KE} alt="pic" />
+
               <Typography>KE</Typography>
             </Box>
           </MenuItem>
-                 <MenuItem value={"قطر"}>
+          <MenuItem value={"قطر"}>
             <Box
               sx={{
                 display: "flex",
@@ -85,7 +86,8 @@ React.useEffect(()=>{
                 gap: "5px",
               }}
             >
-              <img className="dropImg" src={q} alt="" />
+              <LazyLoadImage className="dropImg" src={q} alt="pic" />
+
               <Typography>QA</Typography>
             </Box>
           </MenuItem>
@@ -98,11 +100,12 @@ React.useEffect(()=>{
                 gap: "5px",
               }}
             >
-              <img className="dropImg" src={b} alt="" />
+              <LazyLoadImage className="dropImg" src={b} alt="pic" />
+
               <Typography>BA</Typography>
             </Box>
           </MenuItem>{" "}
-   <MenuItem value={"مصر"}>
+          <MenuItem value={"مصر"}>
             <Box
               sx={{
                 display: "flex",
@@ -111,14 +114,17 @@ React.useEffect(()=>{
                 gap: "5px",
               }}
             >
-              <img className="dropImg" src={EG} alt="" />
+              <LazyLoadImage className="dropImg" src={EG} alt="pic" />
+
               <Typography>EG</Typography>
             </Box>
           </MenuItem>
+          <MenuItem value={"كل الدول"}>
+            <Box
+              sx={{ display: "flex", direction: "row", alignItems: "center" }}
+            >
+              <LazyLoadImage className="dropImg" src={all} alt="pic" />
 
-          <MenuItem value={"كل الدول"} >
-            <Box sx={{ display: "flex", direction: "row",alignItems:"center" }}>
-              <img className="dropImg" src={all} alt="" />
               <Typography>كل الدول</Typography>
             </Box>
           </MenuItem>
