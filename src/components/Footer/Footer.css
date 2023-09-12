@@ -1,0 +1,17 @@
+.icons{
+    color: black;
+}
+.img1{
+    width: 200px;
+    height: 100px;
+}
+.social{
+    height: 40px;
+    width: 40px;
+}
+@media only screen and (max-width: 600px) {
+.img1{
+ width: 150px;
+ height: 70px;
+}
+}

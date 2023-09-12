@@ -1,0 +1,13 @@
+img{
+    width: 100px;
+    height: 50px;
+    
+}
+.imn{
+    cursor: pointer;
+}
+.navs{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}

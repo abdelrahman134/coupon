@@ -1,0 +1,14 @@
+.iconpop{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.con{
+    font-weight: bold;
+    font-size: 30px;
+}
+.imgd{
+    object-fit: contain;
+    
+
+}
