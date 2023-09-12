@@ -36,7 +36,7 @@
 //   );
 // }
 
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -54,10 +54,10 @@ import { Box, Button, Typography } from '@mui/material';
 import "./Banner.css"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
  function Banner({data,role,deleteBanner}) {
-  const handleClick = (e) => {
+  const handleClick = useCallback((e) => {
     deleteBanner(e.currentTarget.id);
 
-  };
+  },[]);
   
 
 

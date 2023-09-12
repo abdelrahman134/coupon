@@ -21,12 +21,12 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "redux-persist": "^6.0.0",
-    "swiper": "^10.2.0",
-    "web-vitals": "^2.1.4"
+    "swiper": "^10.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "serve": "webpack serve --mode development",
+    "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

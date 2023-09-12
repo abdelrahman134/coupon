@@ -1,5 +1,5 @@
 import { Box, Button, Stack, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Cards from '../../components/Card/Card';
 import Banner from '../../components/Banner/Banner';
 import Dropdown from '../../components/Dropdown/Dropdown';
@@ -35,7 +35,7 @@ const role =currentUser?.role?currentUser.role:"emp"
         //   }
         // })
       // };
-  const deleteFun = async (id) => {
+  const deleteFun =useCallback(  async (id) => {
     try {
       axiosInstance.delete(`delete/${id}`, {
         withCredentials: true,
@@ -43,8 +43,8 @@ const role =currentUser?.role?currentUser.role:"emp"
     } catch (e) {
       console.log(e);
     }
-  };
-  const deleteBanner = async (id) => {
+  },[]);
+  const deleteBanner = useCallback(async (id) => {
     try {
       axiosInstance.delete(`deleteBanner/${id}`, {
         withCredentials: true,
@@ -52,7 +52,7 @@ const role =currentUser?.role?currentUser.role:"emp"
     } catch (e) {
       console.log(e);
     }
-  };    
+  },[]);    
 
       useEffect(()=>{
         const getCoupon=async()=>{

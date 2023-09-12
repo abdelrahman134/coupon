@@ -22,9 +22,9 @@ export default function Dropdown({handleClick}) {
 React.useEffect(()=>{
   handleClick(age)
 },[age])
-  const handleChange = (event) => {
+  const handleChange =React.useCallback( (event) => {
     setAge(event.target.value);
-  };
+  },[]);
   
   return (
     <Box sx={{ width: "125px", height: "40px" }}>

@@ -18,49 +18,49 @@ export default function Popover({ item, id }) {
   const [dislike, setdisLike] = React.useState(item.dislike);
  
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+ const handleClickOpen = React.useCallback(() => {
+   setOpen(true);
+ }, []);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const updatelike = async () => {
-    try {
-      setLike((prev) => prev + 1);
+ const handleClose = React.useCallback(() => {
+   setOpen(false);
+ }, []);
 
-       await axiosInstance.patch(
-        `updatelike/${id}`,
-        { like: like + 1 },
-        {
-          withCredentials: true,
-        }
-      );
-    } catch (e) {
-      console.log(e);
-    }
-  };
+ const updatelike = React.useCallback(async () => {
+   try {
+     setLike((prev) => prev + 1);
 
-  const updatedislike = async () => {
-    try {
-      setdisLike((prev) => prev + 1);
+     await axiosInstance.patch(
+       `updatelike/${id}`,
+       { like: like + 1 },
+       {
+         withCredentials: true,
+       }
+     );
+   } catch (e) {
+     console.log(e);
+   }
+ }, [id, like, setLike]);
 
-       await axiosInstance.patch(
-        `updatelike/${id}`,
-        { dislike: dislike + 1 },
-        {
-          withCredentials: true,
-        }
-      );
-    } catch (e) {
-      console.log(e);
-    }
-  };
+ const updatedislike = React.useCallback(async () => {
+   try {
+     setdisLike((prev) => prev + 1);
 
+     await axiosInstance.patch(
+       `updatelike/${id}`,
+       { dislike: dislike + 1 },
+       {
+         withCredentials: true,
+       }
+     );
+   } catch (e) {
+     console.log(e);
+   }
+ }, [id, dislike, setdisLike]);
   const [copyText, setCopyText] = React.useState(item.couponCode);
-  const handleCopy = () => {
+  const handleCopy =React.useCallback( () => {
     navigator.clipboard.writeText(copyText);
-  };
+  },[item.couponCode]);
   const title1 = `اقوي كوبون خصومات - ${item.companyName} اقوي كود خصم  `;
   const description = ` ${item.discount} اكبر كود خصم في 2023 من موقع   ${item?.companyName}  خصومات حتي  `;
   return (
