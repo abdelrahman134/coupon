@@ -24,9 +24,9 @@ const CardContentNoPadding = styled(CardContent)(`
 export default function Cards({item,role,id,deleteFun}) {
   const [openPopup, setOpenPopup] = useState(false);
 
-  const handleClick=useCallback(()=>{
+  const handleClick=()=>{
   deleteFun(id)
-},[id])
+}
 
   return (
     <Card sx={{ padding: "0px" }}>

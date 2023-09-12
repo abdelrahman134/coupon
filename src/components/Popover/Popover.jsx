@@ -18,15 +18,15 @@ export default function Popover({ item, id }) {
   const [dislike, setdisLike] = React.useState(item.dislike);
  
 
- const handleClickOpen = React.useCallback(() => {
+ const handleClickOpen = () => {
    setOpen(true);
- }, []);
+ };
 
- const handleClose = React.useCallback(() => {
+ const handleClose = () => {
    setOpen(false);
- }, []);
+ };
 
- const updatelike = React.useCallback(async () => {
+ const updatelike =async () => {
    try {
      setLike((prev) => prev + 1);
 
@@ -40,9 +40,9 @@ export default function Popover({ item, id }) {
    } catch (e) {
      console.log(e);
    }
- }, [id, like, setLike]);
+ };
 
- const updatedislike = React.useCallback(async () => {
+ const updatedislike =async () => {
    try {
      setdisLike((prev) => prev + 1);
 
@@ -56,11 +56,11 @@ export default function Popover({ item, id }) {
    } catch (e) {
      console.log(e);
    }
- }, [id, dislike, setdisLike]);
+ };
   const [copyText, setCopyText] = React.useState(item.couponCode);
-  const handleCopy =React.useCallback( () => {
+  const handleCopy = () => {
     navigator.clipboard.writeText(copyText);
-  },[item.couponCode]);
+  };
   const title1 = `اقوي كوبون خصومات - ${item.companyName} اقوي كود خصم  `;
   const description = ` ${item.discount} اكبر كود خصم في 2023 من موقع   ${item?.companyName}  خصومات حتي  `;
   return (

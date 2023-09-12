@@ -35,7 +35,7 @@ const role =currentUser?.role?currentUser.role:"emp"
         //   }
         // })
       // };
-  const deleteFun =useCallback(  async (id) => {
+  const deleteFun = async (id) => {
     try {
       axiosInstance.delete(`delete/${id}`, {
         withCredentials: true,
@@ -43,8 +43,8 @@ const role =currentUser?.role?currentUser.role:"emp"
     } catch (e) {
       console.log(e);
     }
-  },[]);
-  const deleteBanner = useCallback(async (id) => {
+  };
+  const deleteBanner = async (id) => {
     try {
       axiosInstance.delete(`deleteBanner/${id}`, {
         withCredentials: true,
@@ -52,7 +52,7 @@ const role =currentUser?.role?currentUser.role:"emp"
     } catch (e) {
       console.log(e);
     }
-  },[]);    
+  };    
 
       useEffect(()=>{
         const getCoupon=async()=>{

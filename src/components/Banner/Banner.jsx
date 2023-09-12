@@ -54,10 +54,10 @@ import { Box, Button, Typography } from '@mui/material';
 import "./Banner.css"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
  function Banner({data,role,deleteBanner}) {
-  const handleClick = useCallback((e) => {
+  const handleClick =(e) => {
     deleteBanner(e.currentTarget.id);
 
-  },[]);
+  };
   
 
 
