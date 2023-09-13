@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import {  useNavigate, useParams } from "react-router-dom";
 import { loginFailure } from "../../redux/user";
 import axiosInstance from "../../axiosInstance.js";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function UpdateCoupon() {
  
@@ -51,7 +51,7 @@ if (coupon.siteLink) {
   formData.append("siteLink", coupon.siteLink);
   data['siteLink']=coupon.siteLink
 }
-if (country!==[]&&country) {
+if (country!=[]&&country) {
   formData.append("country", country);
   data["country"]=country
 

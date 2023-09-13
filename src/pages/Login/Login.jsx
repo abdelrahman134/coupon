@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 import { loginFailure, loginStart, loginSuccess } from "../../redux/user";
 import axios from "axios";
 import axiosInstance from "../../axiosInstance";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 function Copyright(props) {
   return (

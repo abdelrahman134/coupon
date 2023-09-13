@@ -6,7 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Box, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import like1 from "../../assets/12.png";
 import dislike1 from "../../assets/32.png";
 import "./Popover.css";

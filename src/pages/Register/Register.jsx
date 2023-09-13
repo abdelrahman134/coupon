@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import axiosInstance from "../../axiosInstance";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 // function Copyright(props) {
 //   return (

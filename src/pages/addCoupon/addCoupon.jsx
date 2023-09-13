@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loginFailure } from '../../redux/user';
 import axiosInstance from "../../axiosInstance.js";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet-async";
 
 export default function AddCoupon() {
     const[img,setImg]=useState()

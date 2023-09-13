@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import Cards from '../../components/Card/Card';
 import Banner from '../../components/Banner/Banner';
 import Dropdown from '../../components/Dropdown/Dropdown';
-import Helmet from "react-helmet"
+import{ Helmet }from "react-helmet-async";
 import AboutUs from '../../components/AboutUs/AboutUs';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ export default function Home() {
   const [countryFliter,setCountryFilter]=useState([])
   const [data1,setData1]=useState()
   const [filterData,setFilterData]=useState()
-  const currentUser = useSelector((state) => state.currentUser);
+  const currentUser=useSelector(state=>state.currentUser)
   // const {Searchvalue} = useSelector((state) => state.search);
 
   const [SearchInput,setSearchInput ] = useState();
