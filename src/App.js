@@ -10,6 +10,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import Home from './pages/Home/Home';
 
 // import AddCoupon from './pages/addCoupon/addCoupon';
 // import AddBanner from './pages/addBanner/AddBanner';
@@ -20,7 +21,6 @@ const Register = lazy(() => import("./pages/Register/Register"));
 const AddCoupon = lazy(() => import("./pages/addCoupon/addCoupon"));
 const AddBanner = lazy(() => import("./pages/addBanner/AddBanner"));
 const UpdateCoupon = lazy(() => import("./pages/updateCoupon/UpdateCoupon"));
-const Home = lazy(() => import("./pages/Home/Home"));
 
 
 const theme = createTheme({
