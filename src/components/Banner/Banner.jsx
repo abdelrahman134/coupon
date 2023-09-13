@@ -78,8 +78,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          {data.map((item) => (
-            <SwiperSlide id={item.id}>
+          {data.map((item,i) => (
+            <SwiperSlide id={item.id} key={i}>
               <Box
                 className="banner"
                 // sx={{

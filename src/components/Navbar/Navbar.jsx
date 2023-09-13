@@ -165,8 +165,8 @@ function DrawerAppBar(props) {
 
       <Divider />
       <List>
-        {navItemsmall.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItemsmall.map((item,i) => (
+          <ListItem key={i} disablePadding>
             <ListItemButton sx={{ textAlign: "right" }}>
               <ListItemText primary={item} />
             </ListItemButton>
@@ -217,8 +217,8 @@ function DrawerAppBar(props) {
           <Typography sx={{ visibility: "hidden" }}>dd</Typography>
           {/* <SearchBar sx={{ display: { xs: "none", sm: "block" } }} /> */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "black" }}>
+            {navItems.map((item,i) => (
+              <Button key={i} sx={{ color: "black" }}>
                 {item}
               </Button>
             ))}

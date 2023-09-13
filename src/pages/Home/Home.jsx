@@ -14,7 +14,7 @@ export default function Home() {
   const [countryFliter,setCountryFilter]=useState([])
   const [data1,setData1]=useState()
   const [filterData,setFilterData]=useState()
-  const {currentUser}=useSelector(state=>state)
+  const currentUser = useSelector((state) => state.currentUser);
   // const {Searchvalue} = useSelector((state) => state.search);
 
   const [SearchInput,setSearchInput ] = useState();
@@ -205,10 +205,10 @@ const role =currentUser?.role?currentUser.role:"emp"
           padding: { xs: "40px 10px", md: "40px 60px" },
         }}
       >
-        {(filterData || data1)?.map((item) => (
+        {(filterData || data1)?.map((item,i) => (
           <Cards
             item={item}
-            key={item.id}
+            key={i}
             id={item._id}
             role={role}
             deleteFun={deleteFun}

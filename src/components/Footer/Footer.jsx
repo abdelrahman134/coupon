@@ -128,11 +128,12 @@ export default function Footer() {
           >
             الدول
           </Typography>
-          {country.map((item) => (
+          {country.map((item,i) => (
             <Typography
               sx={{
                 textAlign: "right",
               }}
+              key={i}
             >
               {item}
             </Typography>
