@@ -85,12 +85,12 @@ export default function Popover({ item, id }) {
           color: "white",
           width: "100%",
           marginTop: { xs: "0px", md: "10px" },
-          padding: { xs: "0px" },
+          padding: { xs: "10px 0px" },
         }}
       >
         احصل على الخصم
       </Button>
-      <a href={item.siteLink}  target="_blank" rel="noreferrer">
+      <a href={item.siteLink} target="_blank" rel="noreferrer">
         <Button
           variant="contained"
           sx={{
@@ -98,7 +98,7 @@ export default function Popover({ item, id }) {
             color: "white",
             width: "100%",
             marginTop: { xs: "4px", md: "10px" },
-            padding: { xs: "0px" },
+            padding: { xs: "10px 0px" },
           }}
         >
           زيارة الموقع

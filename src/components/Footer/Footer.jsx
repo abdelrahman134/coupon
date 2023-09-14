@@ -68,18 +68,26 @@ export default function Footer() {
           <a
             className="icons"
             href="https://api.whatsapp.com/message/DG5NAZFB7N5GN1?autoload=1&app_absent=0"
+            aria-label="Whatsapp"
           >
             <LazyLoadImage className="social" src={wh} alt="pic" />
           </a>
 
-          <a className="icons" href="https://t.me/EasyCodesa_bot">
+          <a
+            className="icons"
+            href="https://t.me/EasyCodesa_bot"
+            aria-label="Telgram"
+          >
             {" "}
             <LazyLoadImage className="social" src={tel} alt="pic" />
           </a>
 
-          <a className="icons" href="https://www.instagram.com/Easycode.sa">
+          <a
+            className="icons"
+            href="https://www.instagram.com/Easycode.sa"
+            aria-label="Instgram"
+          >
             {" "}
-
             <LazyLoadImage className="social" src={ins} alt="pic" />
           </a>
         </Box>
@@ -128,7 +136,7 @@ export default function Footer() {
           >
             الدول
           </Typography>
-          {country.map((item,i) => (
+          {country.map((item, i) => (
             <Typography
               sx={{
                 textAlign: "right",
@@ -144,6 +152,8 @@ export default function Footer() {
         sx={{
           marginTop: { xs: "0px", md: "60px" },
           display: { xs: "block", md: "none" },
+          fontSize:"16px",
+      
         }}
       >
         ©Copyright. Easy Code rights are reserved

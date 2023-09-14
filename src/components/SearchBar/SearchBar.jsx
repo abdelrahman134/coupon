@@ -32,7 +32,11 @@ export default function SearchBar({setSearchInput}) {
         placeholder="ابحث عن كوبونات و خصومات"
         onChange={handleChange}
       />
-      <IconButton type="submit" sx={{ p: "10px", color: "rgb(102,45,145,1)" }}>
+      <IconButton
+        type="submit"
+        sx={{ p: "10px", color: "rgb(102,45,145,1)" }}
+        aria-label="Search"
+      >
         <Search />
       </IconButton>
     </Paper>
