@@ -161,7 +161,7 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
    
-      <LazyLoadImage src={logo} alt="pic" />
+      <img src={logo} alt="pic"  loading="eager" />
 
       <Divider />
       <List>
@@ -212,7 +212,7 @@ function DrawerAppBar(props) {
           </IconButton>
           <Link to="/" className="imn">
 
-            <LazyLoadImage  src={logo} alt="pic" />
+            <img  src={logo} alt="pic" />
           </Link>
           <Typography sx={{ visibility: "hidden" }}>dd</Typography>
           {/* <SearchBar sx={{ display: { xs: "none", sm: "block" } }} /> */}
