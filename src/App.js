@@ -14,13 +14,13 @@ import Home from './pages/Home/Home';
 
 // import AddCoupon from './pages/addCoupon/addCoupon';
 // import AddBanner from './pages/addBanner/AddBanner';
-// import UpdateCoupon from './pages/updateCoupon/UpdateCoupon';
+import UpdateCoupon from './pages/updateCoupon/UpdateCoupon';
 import { Suspense, lazy } from 'react';
 const Login = lazy(() => import("./pages/Login/Login"));
 const Register = lazy(() => import("./pages/Register/Register"));
 const AddCoupon = lazy(() => import("./pages/addCoupon/addCoupon"));
 const AddBanner = lazy(() => import("./pages/addBanner/AddBanner"));
-const UpdateCoupon = lazy(() => import("./pages/updateCoupon/UpdateCoupon"));
+// const UpdateCoupon = lazy(() => import("./pages/updateCoupon/UpdateCoupon"));
 
 
 const theme = createTheme({
